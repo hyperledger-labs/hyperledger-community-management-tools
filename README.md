@@ -19,3 +19,8 @@ Github IDs for the set of initial committers.
 
 # Sponsor
 - Vipin Bharathan (Github:  [vipinsun](https://github.com/vipinsun), Email: vipinsun@gmail.com), Chair of the Identity working group
+
+# Tools
+- **Project Reports** - generates a health assessment report for each project within Hyperledger, as well as other projects that might be of interest.
+  - [Project Report Requirements](./project-reports/docs/requirements.md) specifies the proposed content
+  - [Project Report README](./project-reports/README.md) provides details on how to run
