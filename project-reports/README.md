@@ -10,8 +10,10 @@ GET /repos/:owner/:repo/stats/contributors
 The tool has the following prerequisites:
 - Python 2.7.13 or higher
 
-# Command Line Options
+# Running
 ```
+usage: main.py [-h] [--cfg CFG] -u USERNAME -p PASSWORD [--details]
+
 -h, --help            show this help message and exit
 --cfg CFG             Configuration file containing projects and
                       repositories (default=./repos.cfg).
