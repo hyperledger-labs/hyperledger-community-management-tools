@@ -234,5 +234,30 @@
       {% endfor -%}
       </table>
   {% endif %}
+
+  {%if show_contributors %}
+    <h2>All Contributors</h2>
+    <table>
+      <tr>
+        <th>Github Login</th>
+        <th>Total Commits</th>
+        <th>First Commit</th>
+        <th>Last Commit</th>
+        <th>Total Additions</th>
+        <th>Total Deletions</th>
+      </tr>
+      {% set counter = 0 -%}
+      {% for c in contributors -%}
+        <tr>
+          <td>{{ c }}</td>
+          <td>{{ contributors[c]["total_commits"] }}</td>
+          <td>{{ contributors[c]["first_commit"]|datetimeformat }}</td>
+          <td>{{ contributors[c]["last_commit"]|datetimeformat }}</td>
+          <td>{{ contributors[c]["additions"] }}</td>
+          <td>{{ contributors[c]["deletions"] }}</td>
+        </tr>
+      {% endfor -%}
+    </table>
+  {% endif -%}
   </body>
 </html>
