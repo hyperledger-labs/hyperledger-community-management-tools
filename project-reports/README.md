@@ -12,7 +12,7 @@ The tool has the following prerequisites:
 
 # Running
 ```
-usage: main.py [-h] [--cfg CFG] -u USERNAME -p PASSWORD [--details]
+usage: main.py [-h] [--cfg CFG] -u USERNAME -p PASSWORD [-d] [-s]
 
 -h, --help            show this help message and exit
 --cfg CFG             Configuration file containing projects and
@@ -21,7 +21,9 @@ usage: main.py [-h] [--cfg CFG] -u USERNAME -p PASSWORD [--details]
                       Github username to use for API calls (required)
 -p PASSWORD, --password PASSWORD
                       Github access token to use for API calls (required)
---details             Output detailed lists.
+-d, --details         Output detailed lists.
+-s, --show_contributors
+                      Output all contributors.
 ```
 
 # Configuration File
