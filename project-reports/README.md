@@ -10,8 +10,10 @@ GET /repos/:owner/:repo/stats/contributors
 The tool has the following prerequisites:
 - Python 2.7.13 or higher
 
-# Command Line Options
+# Running
 ```
+usage: main.py [-h] [--cfg CFG] -u USERNAME -p PASSWORD [-d] [-s]
+
 -h, --help            show this help message and exit
 --cfg CFG             Configuration file containing projects and
                       repositories (default=./repos.cfg).
@@ -19,7 +21,9 @@ The tool has the following prerequisites:
                       Github username to use for API calls (required)
 -p PASSWORD, --password PASSWORD
                       Github access token to use for API calls (required)
---details             Output detailed lists.
+-d, --details         Output detailed lists.
+-s, --show_contributors
+                      Output all contributors.
 ```
 
 # Configuration File
