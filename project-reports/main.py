@@ -258,7 +258,7 @@ def main():
     password = args.password
 
     if not password:
-        password = getpass.getpass("Please enter github password:")
+        password = getpass.getpass("Please enter github access token:")
 
     cfg = ConfigParser(interpolation=ExtendedInterpolation())
     cfg.read_file(open(args.cfg))
