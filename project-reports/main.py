@@ -5,6 +5,8 @@
 from __future__ import division
 
 import os
+import time
+import getpass
 from jinja2 import Environment, FileSystemLoader, Template
 import datetime
 import dateutil.relativedelta
@@ -153,14 +155,18 @@ def create_output_html(project_name, title, incubation_date, active_date, contri
 
 
 def get_api_results(url, username, password):
-    print "Processing URL: %s" % url
-    r = requests.get(url, auth=(username, password))
-
-    # This API sometimes returns a 202, so we want to make sure that we get the
-    # results before moving on
-    while (r.status_code != 200):
-        print r.status_code
+    print("Processing URL: %s" % url)
+    while True:
         r = requests.get(url, auth=(username, password))
+
+        # This API sometimes returns a 202, so we want to make sure that we get the
+        # results before moving on
+        if r.status_code == 202:
+            time.sleep(1)
+            continue
+
+        r.raise_for_status()
+        break
 
     return r.json()
 
@@ -195,7 +201,7 @@ def parse_contributor_stats(results):
             login = contributor["author"]["login"]
 
             # If this login has not been previously seen, initialize the entry.
-            if not rc.has_key(login):
+            if login not in rc:
                 rc[login] = {}
                 rc[login]["total_commits"] = 0
                 rc[login]["first_commit"] = 0
@@ -232,7 +238,7 @@ def main():
                 raise
 
     parser = argparse.ArgumentParser(description="Generate project reports.")
-    parser.add_argument("--cfg",
+    parser.add_argument("-c", "--cfg",
         help="Configuration file containing projects and repositories (default=./repos.cfg).",
         default="./repos.cfg")
     parser.add_argument("-u", "--username",
@@ -240,7 +246,7 @@ def main():
         required=True)
     parser.add_argument("-p", "--password",
         help="Github access token to use for API calls (required)",
-        required=True)
+        required=False)
     parser.add_argument("-d", "--details", help="Output detailed lists.",
         default=False, action='store_true')
     parser.add_argument("-s", "--show_contributors",
@@ -248,10 +254,16 @@ def main():
         default=False, action='store_true')
     args = parser.parse_args()
 
+    username = args.username
+    password = args.password
+
+    if not password:
+        password = getpass.getpass("Please enter github access token:")
+
     cfg = ConfigParser(interpolation=ExtendedInterpolation())
     cfg.read_file(open(args.cfg))
     for project in cfg.sections():
-        print "===== Processing %s repositories =====" % project
+        print("===== Processing %s repositories =====" % project)
         contributors = parse_contributor_stats(
             get_project_contributors(cfg, project, args.username, args.password))
         if 'title' in cfg[project].keys():
