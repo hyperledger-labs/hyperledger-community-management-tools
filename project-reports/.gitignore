@@ -2,3 +2,4 @@ html
 all.cfg
 sawtooth.cfg
 fabric.cfg
+venv/
