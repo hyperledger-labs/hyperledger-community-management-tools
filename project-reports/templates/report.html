@@ -26,6 +26,8 @@
     {% if active_date is not none %}
       <p>Active Date: {{ active_date }}</p>
     {%endif %}
+
+    {%if show_ryg %}
     <h2>Health Summary</h2>
     <table>
       <tfoot>
@@ -55,6 +57,7 @@
       <tr>
       </tr>
     </table>
+    {%endif %}
 
     <h2>Contributors Summary</h2>
     <table>
