@@ -97,7 +97,7 @@ def calculate_diversity_color(regular_contributor_percent):
     return rc
 
 
-def create_output_html(project_name, title, incubation_date, active_date, contributors, show_details, show_contributors):
+def create_output_html(project_name, title, incubation_date, active_date, contributors, show_ryg, show_details, show_contributors):
     now = datetime.datetime.now()
     one_month_ago = now + dateutil.relativedelta.relativedelta(months=-1)
     six_months_ago = now + dateutil.relativedelta.relativedelta(months=-6)
@@ -145,6 +145,7 @@ def create_output_html(project_name, title, incubation_date, active_date, contri
         'retention_color': retention_color,
         'diversity_color': diversity_color,
         'maturity_color': "grey",
+        'show_ryg': show_ryg,
         'show_details': show_details,
         'show_contributors': show_contributors
     }
@@ -247,6 +248,8 @@ def main():
     parser.add_argument("-p", "--password",
         help="Github access token to use for API calls (required)",
         required=False)
+    parser.add_argument("-g", "--show_ryg", help="Show Health Summary",
+        default=False, action='store_true')
     parser.add_argument("-d", "--details", help="Output detailed lists.",
         default=False, action='store_true')
     parser.add_argument("-s", "--show_contributors",
@@ -281,7 +284,7 @@ def main():
         else:
             active_date = None
 
-        create_output_html(project, title, incubation_date, active_date, contributors, args.details, args.show_contributors)
+        create_output_html(project, title, incubation_date, active_date, contributors, args.show_ryg, args.details, args.show_contributors)
 
 
 if __name__ == "__main__":

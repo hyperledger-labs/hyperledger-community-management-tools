@@ -1,5 +1,5 @@
 html
-all.cfg
 sawtooth.cfg
 fabric.cfg
+ursa.cfg
 venv/

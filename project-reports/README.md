@@ -21,6 +21,7 @@ usage: main.py [-h] [--cfg CFG] -u USERNAME -p PASSWORD [-d] [-s]
                       Github username to use for API calls (required)
 -p PASSWORD, --password PASSWORD
                       Github access token to use for API calls (required)
+-g, --show_ryg        Show the health summary.
 -d, --details         Output detailed lists.
 -s, --show_contributors
                       Output all contributors.

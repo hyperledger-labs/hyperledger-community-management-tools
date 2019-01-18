@@ -24,3 +24,5 @@ Github IDs for the set of initial committers.
 - **Project Reports** - generates a health assessment report for each project within Hyperledger, as well as other projects that might be of interest.
   - [Project Report Requirements](./project-reports/docs/requirements.md) specifies the proposed content
   - [Project Report README](./project-reports/README.md) provides details on how to run
+- **get_contributors** - generates a comma-separated file containing a list of contributors.
+  - [Get Contributors README](./get_contributors/README.md)
