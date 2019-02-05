@@ -6,6 +6,7 @@ filename="hyperledger-source"
 tarball=TRUE
 output_dir=/tmp
 INCLUDE_PROJECT_OPTIONS=1
+short_description="Create a tarball of the latest source in the specified repositories."
 
 SOURCE="${BASH_SOURCE[0]}"
 while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symlink
