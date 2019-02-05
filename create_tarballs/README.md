@@ -15,7 +15,7 @@ A single project may contain multiple source repositories (as defined in `reposi
 ### Usage
 This script is used for creating GZIP'd tarballs that can be used by the license scanning process.
 ```
-        ./create_tarballs/create_tarballs.sh [options]
+        ./create_tarballs.sh [options]
         Create a tarball of the latest source in the specified repositories.
 
         Options:
