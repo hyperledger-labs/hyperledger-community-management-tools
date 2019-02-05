@@ -28,3 +28,5 @@ Github IDs for the set of initial committers.
   - [Get Contributors README](./get_contributors/README.md)
 - **get_lines_of_code** - generates a comma-separated file containing a list of repositories, the number of files, and the lines of code.
   - [Get Lines of Code README](./get_lines_of_code/README.md)
+- **create_tarballs** - creates tarballs of the latest source in the specified repositories
+  - [Create tarballs README](./create_tarballs/README.md)
