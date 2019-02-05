@@ -135,6 +135,9 @@ labs_repositories=(
   https://github.com/hyperledger-labs/umbra.git
   https://github.com/hyperledger-labs/milk-donor.git
   https://github.com/hyperledger-labs/fabric-secure-chaincode.git
+  https://github.com/hyperledger-labs/private-transaction-families.git
+  https://github.com/hyperledger-labs/solang.git
+  https://github.com/hyperledger-labs/sawtooth-healthcare.git
 )
 
 other_repositories=(
@@ -175,7 +178,7 @@ all_repositories=(
   "${caliper_repositories[@]}"
   "${ursa_repositories[@]}"
   "${grid_repositories[@]}"
-  "${lab_repositories[@]}"
+  "${labs_repositories[@]}"
   "${other_repositories[@]}"
 )
 
