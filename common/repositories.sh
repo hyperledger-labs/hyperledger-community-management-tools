@@ -135,6 +135,9 @@ labs_repositories=(
   https://github.com/hyperledger-labs/umbra.git
   https://github.com/hyperledger-labs/milk-donor.git
   https://github.com/hyperledger-labs/fabric-secure-chaincode.git
+  https://github.com/hyperledger-labs/private-transaction-families.git
+  https://github.com/hyperledger-labs/solang.git
+  https://github.com/hyperledger-labs/sawtooth-healthcare.git
 )
 
 other_repositories=(
