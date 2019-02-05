@@ -10,118 +10,118 @@ do
 key="$1"
 
 case $key in
-    --fabric)
+    ${INCLUDE_PROJECT_OPTIONS:+--fabric})
       if [[ "$all_specified" == FALSE ]] ; then
         repositories+=( "${fabric_repositories[@]}" )
         filename+="-fabric"
       fi
     ;;
-    --sawtooth)
+    ${INCLUDE_PROJECT_OPTIONS:+--sawtooth})
       if [[ "$all_specified" == FALSE ]] ; then
         repositories+=( "${sawtooth_repositories[@]}" )
         filename+="-sawtooth"
       fi
     ;;
-    --iroha)
+    ${INCLUDE_PROJECT_OPTIONS:+--iroha})
       if [[ "$all_specified" == FALSE ]] ; then
         repositories+=( "${iroha_repositories[@]}" )
         filename+="-iroha"
       fi
     ;;
-    --burrow)
+    ${INCLUDE_PROJECT_OPTIONS:+--burrow})
       if [[ "$all_specified" == FALSE ]] ; then
         repositories+=( "${burrow_repositories[@]}" )
         filename+="-burrow"
       fi
     ;;
-    --indy)
+    ${INCLUDE_PROJECT_OPTIONS:+--indy})
       if [[ "$all_specified" == FALSE ]] ; then
         repositories+=( "${indy_repositories[@]}" )
         filename+="-indy"
       fi
     ;;
-    --composer)
+    ${INCLUDE_PROJECT_OPTIONS:+--composer})
       if [[ "$all_specified" == FALSE ]] ; then
         repositories+=( "${composer_repositories[@]}" )
         filename+="-composer"
       fi
     ;;
-    --cello)
+    ${INCLUDE_PROJECT_OPTIONS:+--cello})
       if [[ "$all_specified" == FALSE ]] ; then
         repositories+=( "${cello_repositories[@]}" )
         filename+="-cello"
       fi
     ;;
-    --explorer)
+    ${INCLUDE_PROJECT_OPTIONS:+--explorer})
       if [[ "$all_specified" == FALSE ]] ; then
         repositories+=( "${explorer_repositories[@]}" )
         filename+="-explorer"
       fi
     ;;
-    --quilt)
+    ${INCLUDE_PROJECT_OPTIONS:+--quilt})
       if [[ "$all_specified" == FALSE ]] ; then
         repositories+=( "${quilt_repositories[@]}" )
         filename+="-quilt"
       fi
     ;;
-    --caliper)
+    ${INCLUDE_PROJECT_OPTIONS:+--caliper})
       if [[ "$all_specified" == FALSE ]] ; then
         repositories+=( "${caliper_repositories[@]}" )
         filename+="-caliper"
       fi
     ;;
-    --ursa)
+    ${INCLUDE_PROJECT_OPTIONS:+--ursa})
       if [[ "$all_specified" == FALSE ]] ; then
         repositories+=( "${ursa_repositories[@]}" )
         filename+="-ursa"
       fi
     ;;
-    --grid)
+    ${INCLUDE_PROJECT_OPTIONS:+--grid})
       if [[ "$all_specified" == FALSE ]] ; then
         repositories+=( "${grid_repositories[@]}" )
         filename+="-grid"
       fi
     ;;
-    --projects)
+    ${INCLUDE_PROJECT_OPTIONS:+--projects})
       if [[ "$all_specified" == FALSE ]] ; then
         repositories+=( "${project_repositories[@]}" )
         filename+="-projects"
       fi
     ;;
-    --labs)
+    ${INCLUDE_PROJECT_OPTIONS:+--labs})
       if [[ "$all_specified" == FALSE ]] ; then
         repositories+=( "${labs_repositories[@]}" )
         filename+="-labs"
       fi
     ;;
-    --other)
+    ${INCLUDE_PROJECT_OPTIONS:+--other})
       if [[ "$all_specified" == FALSE ]] ; then
         repositories+=( "${other_repositories[@]}" )
         filename+="-other"
       fi
     ;;
-    --gerrit)
+    ${INCLUDE_PROJECT_OPTIONS:+--gerrit})
       if [[ "$all_specified" == FALSE ]] ; then
         repositories+=( "${gerrit_repositories[@]}" )
         filename+="-gerrit"
       fi
     ;;
-    --github)
+    ${INCLUDE_PROJECT_OPTIONS:+--github})
       if [[ "$all_specified" == FALSE ]] ; then
         repositories+=( "${github_repositories[@]}" )
         filename+="-github"
       fi
     ;;
-    --all)
+    ${INCLUDE_PROJECT_OPTIONS:+--all})
       all_specified=TRUE
       filename+="-all"
       repositories="${all_repositories[@]}"
     ;;
-    --since)
+    ${INCLUDE_DATE_OPTIONS:+--since})
       since="$2"
       shift # past argument or value. 2nd shift below
       ;;
-    --until)
+    ${INCLUDE_DATE_OPTIONS:+--until})
       until="$2"
       shift # past argument or value. 2nd shift below
       ;;

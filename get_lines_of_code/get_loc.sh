@@ -1,5 +1,13 @@
 #!/bin/bash
 
+#Default variables
+repositories=()
+filename="hyperledger-lines-of-code"
+since=""
+output_dir=/tmp
+INCLUDE_PROJECT_OPTIONS=1
+short_description="Get the lines of code from all Hyperledger repositories."
+
 SOURCE="${BASH_SOURCE[0]}"
 while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symlink
   DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
@@ -8,42 +16,7 @@ while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symli
 done
 script_dir="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 
-. ${script_dir}/../common/repositories.sh
-
-#Default variables
-repositories="${all_repositories[@]}"
-filename="hyperledger-lines-of-code"
-since=""
-output_dir=/tmp
-
-# Handle command line arguments
-while [[ $# -gt 0 ]]
-do
-  key="$1"
-  
-  case $key in
-    --output-dir)
-      output_dir=$2
-      shift # past argument or value. 2nd shift below
-    ;;
-    --help)
-      cat << EOM
-        get_loc.sh
-        Get the lines of code from all Hyperledger repositories.
-  
-        Options:
-          --output-dir <dir>: Where should output be placed. (Default: /tmp)
-          --help:  Shows this help message
-EOM
-      exit;
-    ;;
-    *)
-      echo "Unknown option $key"
-      exit 1
-    ;;
-  esac
-  shift # past argument or value
-done
+. ${script_dir}/../common/command-line.sh
 
 today=`date -u +%Y-%m-%d-%H-%M-%S`
 outfile="${output_dir}"/${filename}-${today}/loc.csv
