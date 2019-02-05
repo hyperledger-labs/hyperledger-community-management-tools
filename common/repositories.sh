@@ -178,7 +178,7 @@ all_repositories=(
   "${caliper_repositories[@]}"
   "${ursa_repositories[@]}"
   "${grid_repositories[@]}"
-  "${lab_repositories[@]}"
+  "${labs_repositories[@]}"
   "${other_repositories[@]}"
 )
 
