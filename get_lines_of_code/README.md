@@ -1,5 +1,5 @@
 # Get Lines of Code
-Gets the lines of code and the number of files from all source repositories (as defined in `repositories.sh`). Will output the results at:
+Gets the lines of code and the number of files from all source repositories (as defined in `../common/repositories.sh`). Will output the results at:
 ```
 /<output-dir>/hyperledger-lines-of-code-<date>/loc.csv
 ```
