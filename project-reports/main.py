@@ -97,6 +97,24 @@ def calculate_diversity_color(regular_contributor_percent):
     return rc
 
 
+def get_summary(contributors):
+    summary = {}
+    summary["total_commits"] = 0
+    summary["first_commit"] = None
+    summary["last_commit"] = None
+    summary["total_additions"] = 0
+    summary["total_deletions"] = 0
+    for k,v in contributors.items():
+        summary["total_commits"] += v["total_commits"]
+        if summary["first_commit"] == None or summary["first_commit"] > v["first_commit"]:
+            summary["first_commit"] = v["first_commit"]
+        if summary["last_commit"] == None or summary["last_commit"] < v["last_commit"]:
+            summary["last_commit"] = v["last_commit"]
+        summary["total_additions"] += v["additions"]
+        summary["total_deletions"] += v["deletions"]
+
+    return summary
+
 def create_output_html(project_name, title, incubation_date, active_date, contributors, show_ryg, show_details, show_contributors):
     now = datetime.datetime.now()
     one_month_ago = now + dateutil.relativedelta.relativedelta(months=-1)
@@ -124,11 +142,13 @@ def create_output_html(project_name, title, incubation_date, active_date, contri
     retention_color = calculate_retention_color((len(active_contributors) / total_contributors), (len(repeat_contributors) / total_contributors))
     diversity_color = calculate_diversity_color(len(regular_sorted) / total_contributors)
 
+    summary = get_summary(contributors)
+
     # Generate the project report with the given context.
     fname = "./html/" + project_name.lower() + ".html"
     context = {
         'title': title,
-        'generation_date_time': now.strftime("%Y-%m-%d %H:%M:%S"),
+        'generation_date_time': now.strftime("%Y-%b-%d %H:%M:%S"),
         'incubation_date': incubation_date,
         'active_date': active_date,
         'total_contributors': total_contributors,
@@ -140,6 +160,7 @@ def create_output_html(project_name, title, incubation_date, active_date, contri
         'inactive_contributors': inactive_sorted,
         'core_contributors': core_sorted,
         'regular_contributors': regular_sorted,
+        'summary': summary,
         'level_of_interest_color': "grey",
         'conversion_color': "grey",
         'retention_color': retention_color,
