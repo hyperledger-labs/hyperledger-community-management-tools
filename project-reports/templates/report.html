@@ -19,13 +19,32 @@
 </head>
 <body>
   <h1>{{title}} Report</h1>
-    <p>Generated: {{generation_date_time}}</p>
+    <table>
+      <tr>
+        <th>Generated</th>
+        <td>{{generation_date_time}}</td>
+      </tr>
     {% if incubation_date is not none %}
-      <p>Incubation Date: {{ incubation_date }}</p>
+      <tr>
+        <th>Incubation Date</th>
+        <td>{{ incubation_date }}</td>
+      </tr>
     {%endif %}
     {% if active_date is not none %}
-      <p>Active Date: {{ active_date }}</p>
+      <tr>
+        <th>Active Date</th>
+        <td>{{ active_date }}</td>
+      </tr>
     {%endif %}
+    <tr>
+      <th>First Commit Date</th>
+      <td>{{ summary["first_commit"]|datetimeformat }}</td>
+    </tr>
+    <tr>
+      <th>Last Commit Date</th>
+      <td>{{summary["last_commit"]|datetimeformat}}</td>
+    </tr>
+  </table>
 
     {%if show_ryg %}
     <h2>Health Summary</h2>
@@ -248,6 +267,8 @@
         <th>Last Commit</th>
         <th>Total Additions</th>
         <th>Total Deletions</th>
+        <th>Active</th>
+        <th>Contributor Type</th>
       </tr>
       {% set counter = 0 -%}
       {% for c in contributors -%}
@@ -258,8 +279,36 @@
           <td>{{ contributors[c]["last_commit"]|datetimeformat }}</td>
           <td>{{ contributors[c]["additions"] }}</td>
           <td>{{ contributors[c]["deletions"] }}</td>
+          {% if c in inactive_contributors %}
+            <td>&#10005;</td>
+          {% else %}
+            <td>&#10004;</td>
+          {% endif %}
+          {% if c in new_contributors %}
+            <td>New</td>
+          {% else %}
+            {% if c in core_contributors %}
+              <td>Core</td>
+            {% else %}
+              {% if c in regular_contributors %}
+                <td>Regular</td>
+              {% else %}
+                <td>Casual</td>
+              {% endif %}
+            {% endif %}
+          {% endif %}
         </tr>
       {% endfor -%}
+      <tr>
+        <td><b>Summary<b></td>
+        <td><b>{{ summary["total_commits"] }}</b></td>
+        <td><b>{{ summary["first_commit"]|datetimeformat }}</b></td>
+        <td><b>{{ summary["last_commit"]|datetimeformat }}</b></td>
+        <td><b>{{ summary["total_additions"] }}</b></td>
+        <td><b>{{ summary["total_deletions"] }}</b></td>
+        <td></td>
+        <td></td>
+      </tr>
     </table>
   {% endif -%}
   </body>
