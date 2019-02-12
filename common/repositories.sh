@@ -45,17 +45,19 @@ sawtooth_repositories=(
   https://github.com/hyperledger/sawtooth-seth.git
   https://github.com/hyperledger/sawtooth-supply-chain.git
   https://github.com/hyperledger/sawtooth-website.git
-  https://github.com/hyperledger/education-sawtooth-simple-supply.git
 )
 
 iroha_repositories=(
-  https://github.com/hyperledger/iroha.git
   https://github.com/hyperledger/iroha-android.git
   https://github.com/hyperledger/iroha-dotnet.git
   https://github.com/hyperledger/iroha-ed25519.git
   https://github.com/hyperledger/iroha-ios.git
+  https://github.com/hyperledger/iroha-java.git
   https://github.com/hyperledger/iroha-javascript.git
+  https://github.com/hyperledger/iroha-python.git
   https://github.com/hyperledger/iroha-scala.git
+  https://github.com/hyperledger/iroha.git
+  https://github.com/hyperledger/libiroha.git
 )
 
 burrow_repositories=(
@@ -77,16 +79,16 @@ indy_repositories=(
 )
 
 composer_repositories=(
-  https://github.com/hyperledger/composer.git
   https://github.com/hyperledger/composer-atom-plugin.git
-  https://github.com/hyperledger/composer-concerto.git
   https://github.com/hyperledger/composer-concerto-tools.git
+  https://github.com/hyperledger/composer-concerto.git
   https://github.com/hyperledger/composer-knowledge-wiki.git
   https://github.com/hyperledger/composer-sample-applications.git
-  https://github.com/hyperledger/composer-sample-networks.git
   https://github.com/hyperledger/composer-sample-models.git
+  https://github.com/hyperledger/composer-sample-networks.git
   https://github.com/hyperledger/composer-tools.git
   https://github.com/hyperledger/composer-vscode-plugin.git
+  https://github.com/hyperledger/composer.git
 )
 
 cello_repositories=(
@@ -100,8 +102,8 @@ explorer_repositories=(
 )
 
 quilt_repositories=(
-  https://github.com/hyperledger/quilt
-  https://github.com/hyperledger/quilt-crypto-conditions
+  https://github.com/hyperledger/quilt.git
+  https://github.com/hyperledger/quilt-crypto-conditions.git
 )
 
 caliper_repositories=(
@@ -115,39 +117,44 @@ ursa_repositories=(
 
 grid_repositories=(
   https://github.com/hyperledger/grid.git
+  https://github.com/hyperledger/grid-website.git
+  https://github.com/hyperledger/grid-contrib.git
+  https://github.com/hyperledger/grid-rfcs.git
 )
 
 labs_repositories=(
-  https://github.com/hyperledger-labs/z-mix.git
-  https://github.com/hyperledger-labs/private-data-objects.git
   https://github.com/hyperledger-labs/SParts.git
-  https://github.com/hyperledger-labs/fabric-chrome-extension.git
-  https://github.com/hyperledger-labs/hyperledger-labs.github.io.git
+  https://github.com/hyperledger-labs/cordentity.git
   https://github.com/hyperledger-labs/crypto-lib.git
+  https://github.com/hyperledger-labs/fabric-chrome-extension.git
   https://github.com/hyperledger-labs/fabric-docs-cn.git
+  https://github.com/hyperledger-labs/fabric-multi-channel-network-samples.git
+  https://github.com/hyperledger-labs/fabric-secure-chaincode.git
   https://github.com/hyperledger-labs/fabric-vms-provision.git
   https://github.com/hyperledger-labs/hyperledger-community-management-tools.git
-  https://github.com/hyperledger-labs/solidity2chaincode.git
-  https://github.com/hyperledger-labs/cordentity.git
+  https://github.com/hyperledger-labs/hyperledger-labs.github.io.git
+  https://github.com/hyperledger-labs/milk-donor.git
   https://github.com/hyperledger-labs/minbft.git
   https://github.com/hyperledger-labs/payments-performance-test-harness.git
-  https://github.com/hyperledger-labs/fabric-multi-channel-network-samples.git
-  https://github.com/hyperledger-labs/umbra.git
-  https://github.com/hyperledger-labs/milk-donor.git
-  https://github.com/hyperledger-labs/fabric-secure-chaincode.git
+  https://github.com/hyperledger-labs/private-data-objects.git
   https://github.com/hyperledger-labs/private-transaction-families.git
+  https://github.com/hyperledger-labs/sawtooth-heathcare.git
   https://github.com/hyperledger-labs/solang.git
-  https://github.com/hyperledger-labs/sawtooth-healthcare.git
+  https://github.com/hyperledger-labs/solidity2chaincode.git
+  https://github.com/hyperledger-labs/umbra.git
+  https://github.com/hyperledger-labs/z-mix.git
 )
 
 other_repositories=(
-  https://github.com/hyperledger/ci-management.git
+  https://gerrit.hyperledger.org/r/ci-management
   https://github.com/hyperledger/education.git
   https://github.com/hyperledger/education-cryptomoji.git
+  https://github.com/hyperledger/education-sawtooth-simple-supply.git
   https://github.com/hyperledger/hyperledger.git
   https://github.com/hyperledger/hyperledger-rocket-chat-hubot.git
   https://github.com/hyperledger/hyperledger.github.io.git
   https://github.com/hyperledger/hyperledgerwp.git
+  https://github.com/hyperledger/perf-and-scale-wg.git
 )
 
 project_repositories=(
