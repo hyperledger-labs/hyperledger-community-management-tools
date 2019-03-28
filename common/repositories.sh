@@ -138,7 +138,7 @@ labs_repositories=(
   https://github.com/hyperledger-labs/payments-performance-test-harness.git
   https://github.com/hyperledger-labs/private-data-objects.git
   https://github.com/hyperledger-labs/private-transaction-families.git
-  https://github.com/hyperledger-labs/sawtooth-heathcare.git
+  https://github.com/hyperledger-labs/sawtooth-healthcare.git
   https://github.com/hyperledger-labs/solang.git
   https://github.com/hyperledger-labs/solidity2chaincode.git
   https://github.com/hyperledger-labs/umbra.git
