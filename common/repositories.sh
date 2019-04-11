@@ -11,19 +11,20 @@ fabric_repositories=(
   https://gerrit.hyperledger.org/r/fabric-chaintool
   https://gerrit.hyperledger.org/r/fabric-cli
   https://gerrit.hyperledger.org/r/fabric-docs
+  https://gerrit.hyperledger.org/r/fabric-gateway-java
   https://gerrit.hyperledger.org/r/fabric-lib-go
   https://gerrit.hyperledger.org/r/fabric-samples
   https://gerrit.hyperledger.org/r/fabric-sdk-go
   https://gerrit.hyperledger.org/r/fabric-sdk-java
   https://gerrit.hyperledger.org/r/fabric-sdk-node
   https://gerrit.hyperledger.org/r/fabric-sdk-py
-  https://gerrit.hyperledger.org/r/fabric-sdk-rest
   https://gerrit.hyperledger.org/r/fabric-test
   https://gerrit.hyperledger.org/r/fabric-test-resources
   https://gerrit.hyperledger.org/r/homebrew-fabric
 )
 
 sawtooth_repositories=(
+  https://github.com/hyperledger/education-sawtooth-simple-supply.git
   https://github.com/hyperledger/sawtooth-ansible.git
   https://github.com/hyperledger/sawtooth-core.git
   https://github.com/hyperledger/sawtooth-devmode.git
@@ -42,6 +43,7 @@ sawtooth_repositories=(
   https://github.com/hyperledger/sawtooth-sdk-javascript.git
   https://github.com/hyperledger/sawtooth-sdk-python.git
   https://github.com/hyperledger/sawtooth-sdk-rust.git
+  https://github.com/hyperledger/sawtooth-sdk-swift.git
   https://github.com/hyperledger/sawtooth-seth.git
   https://github.com/hyperledger/sawtooth-supply-chain.git
   https://github.com/hyperledger/sawtooth-website.git
@@ -57,7 +59,6 @@ iroha_repositories=(
   https://github.com/hyperledger/iroha-python.git
   https://github.com/hyperledger/iroha-scala.git
   https://github.com/hyperledger/iroha.git
-  https://github.com/hyperledger/libiroha.git
 )
 
 burrow_repositories=(
@@ -75,6 +76,7 @@ indy_repositories=(
   https://github.com/hyperledger/indy-plenum.git
   https://github.com/hyperledger/indy-post-install-automation.git
   https://github.com/hyperledger/indy-sdk.git
+  https://github.com/hyperledger/indy-sdk-python.git
   https://github.com/hyperledger/indy-test-automation.git
 )
 
@@ -112,6 +114,7 @@ caliper_repositories=(
 
 ursa_repositories=(
   https://github.com/hyperledger/ursa.git
+  https://github.com/hyperledger/ursa-docs.git
   https://github.com/hyperledger/ursa-rfcs.git
 )
 
