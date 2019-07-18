@@ -1,5 +1,32 @@
 #!/bin/bash
 
+aries_repositories=(
+  https://github.com/hyperledger/aries-agent.git
+  https://github.com/hyperledger/aries-cloudagent-python.git
+  https://github.com/hyperledger/aries-framework-go.git
+  https://github.com/hyperledger/aries-protocol-test-suite.git
+  https://github.com/hyperledger/aries-rfcs.git
+  https://github.com/hyperledger/aries-sdk-android.git
+  https://github.com/hyperledger/aries-sdk-dotnet.git
+  https://github.com/hyperledger/aries-sdk-go.git
+  https://github.com/hyperledger/aries-sdk-ios.git
+  https://github.com/hyperledger/aries-sdk-java.git
+  https://github.com/hyperledger/aries-sdk-javascript.git
+  https://github.com/hyperledger/aries-sdk-python.git
+  https://github.com/hyperledger/aries-sdk-ruby.git
+  https://github.com/hyperledger/aries-sdk.git
+  https://github.com/hyperledger/aries-staticagent-python.git
+  https://github.com/hyperledger/aries.git
+)
+
+burrow_repositories=(
+  https://github.com/hyperledger/burrow.git
+)
+
+caliper_repositories=(
+  https://github.com/hyperledger/caliper.git
+)
+
 fabric_repositories=(
   https://gerrit.hyperledger.org/r/fabric
   https://gerrit.hyperledger.org/r/fabric-amcl
@@ -49,8 +76,15 @@ sawtooth_repositories=(
   https://github.com/hyperledger/sawtooth-website.git
 )
 
+transact_repositories=(
+  https://github.com/hyperledger/transact-contrib.git
+  https://github.com/hyperledger/transact-rfcs.git
+  https://github.com/hyperledger/transact.git
+)
+
 iroha_repositories=(
   https://github.com/hyperledger/iroha-android.git
+  https://github.com/hyperledger/iroha-deploy.git
   https://github.com/hyperledger/iroha-dotnet.git
   https://github.com/hyperledger/iroha-ed25519.git
   https://github.com/hyperledger/iroha-ios.git
@@ -61,13 +95,8 @@ iroha_repositories=(
   https://github.com/hyperledger/iroha.git
 )
 
-burrow_repositories=(
-  https://github.com/hyperledger/burrow.git
-)
-
 indy_repositories=(
   https://github.com/hyperledger/indy-agent.git
-  https://github.com/hyperledger/indy-anoncreds.git
   https://github.com/hyperledger/indy-crypto.git
   https://github.com/hyperledger/indy-docs.git
   https://github.com/hyperledger/indy-hipe.git
@@ -76,7 +105,6 @@ indy_repositories=(
   https://github.com/hyperledger/indy-plenum.git
   https://github.com/hyperledger/indy-post-install-automation.git
   https://github.com/hyperledger/indy-sdk.git
-  https://github.com/hyperledger/indy-sdk-python.git
   https://github.com/hyperledger/indy-test-automation.git
 )
 
@@ -106,10 +134,6 @@ explorer_repositories=(
 quilt_repositories=(
   https://github.com/hyperledger/quilt.git
   https://github.com/hyperledger/quilt-crypto-conditions.git
-)
-
-caliper_repositories=(
-  https://github.com/hyperledger/caliper.git
 )
 
 ursa_repositories=(
@@ -161,35 +185,37 @@ other_repositories=(
 )
 
 project_repositories=(
-  "${fabric_repositories[@]}"
-  "${sawtooth_repositories[@]}"
-  "${iroha_repositories[@]}"
+  "${aries_repositories[@]}"
   "${burrow_repositories[@]}"
-  "${indy_repositories[@]}"
-  "${composer_repositories[@]}"
-  "${cello_repositories[@]}"
-  "${explorer_repositories[@]}"
-  "${quilt_repositories[@]}"
   "${caliper_repositories[@]}"
-  "${ursa_repositories[@]}"
+  "${cello_repositories[@]}"
+  "${composer_repositories[@]}"
+  "${explorer_repositories[@]}"
+  "${fabric_repositories[@]}"
   "${grid_repositories[@]}"
+  "${indy_repositories[@]}"
+  "${iroha_repositories[@]}"
+  "${quilt_repositories[@]}"
+  "${sawtooth_repositories[@]}"
+  "${transact_repositories[@]}"
+  "${ursa_repositories[@]}"
 )
 
 all_repositories=(
-  "${fabric_repositories[@]}"
-  "${sawtooth_repositories[@]}"
-  "${iroha_repositories[@]}"
+  "${aries_repositories[@]}"
   "${burrow_repositories[@]}"
-  "${indy_repositories[@]}"
-  "${composer_repositories[@]}"
-  "${cello_repositories[@]}"
-  "${explorer_repositories[@]}"
-  "${quilt_repositories[@]}"
   "${caliper_repositories[@]}"
-  "${ursa_repositories[@]}"
+  "${cello_repositories[@]}"
+  "${composer_repositories[@]}"
+  "${explorer_repositories[@]}"
+  "${fabric_repositories[@]}"
   "${grid_repositories[@]}"
-  "${labs_repositories[@]}"
-  "${other_repositories[@]}"
+  "${indy_repositories[@]}"
+  "${iroha_repositories[@]}"
+  "${quilt_repositories[@]}"
+  "${sawtooth_repositories[@]}"
+  "${transact_repositories[@]}"
+  "${ursa_repositories[@]}"
 )
 
 # These two lines look backwards, but they are removing the pattern from the list of all repositories
