@@ -82,6 +82,18 @@ case $key in
         filename+="-grid"
       fi
     ;;
+    ${INCLUDE_PROJECT_OPTIONS:+--aries})
+      if [[ "$all_specified" == FALSE ]] ; then
+        repositories+=( "${aries_repositories[@]}" )
+        filename+="-aries"
+      fi
+    ;;
+    ${INCLUDE_PROJECT_OPTIONS:+--transact})
+      if [[ "$all_specified" == FALSE ]] ; then
+        repositories+=( "${transact_repositories[@]}" )
+        filename+="-transact"
+      fi
+    ;;
     ${INCLUDE_PROJECT_OPTIONS:+--projects})
       if [[ "$all_specified" == FALSE ]] ; then
         repositories+=( "${project_repositories[@]}" )
