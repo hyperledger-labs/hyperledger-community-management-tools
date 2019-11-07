@@ -149,6 +149,10 @@ grid_repositories=(
   https://github.com/hyperledger/grid-rfcs.git
 )
 
+avalon_repositories=(
+  https://github.com/hyperledger/avalon.git
+)
+
 labs_repositories=(
   https://github.com/hyperledger-labs/SParts.git
   https://github.com/hyperledger-labs/cordentity.git
@@ -193,6 +197,7 @@ project_repositories=(
   "${explorer_repositories[@]}"
   "${fabric_repositories[@]}"
   "${grid_repositories[@]}"
+  "${avalon_repositories[@]}"
   "${indy_repositories[@]}"
   "${iroha_repositories[@]}"
   "${quilt_repositories[@]}"
@@ -210,6 +215,7 @@ all_repositories=(
   "${explorer_repositories[@]}"
   "${fabric_repositories[@]}"
   "${grid_repositories[@]}"
+  "${avalon_repositories[@]}"
   "${indy_repositories[@]}"
   "${iroha_repositories[@]}"
   "${quilt_repositories[@]}"

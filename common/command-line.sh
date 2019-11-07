@@ -82,6 +82,12 @@ case $key in
         filename+="-grid"
       fi
     ;;
+    ${INCLUDE_PROJECT_OPTIONS:+--avalon})
+      if [[ "$all_specified" == FALSE ]] ; then
+        repositories+=( "${avalon_repositories[@]}" )
+        filename+="-avalon"
+      fi
+    ;;
     ${INCLUDE_PROJECT_OPTIONS:+--projects})
       if [[ "$all_specified" == FALSE ]] ; then
         repositories+=( "${project_repositories[@]}" )
@@ -150,7 +156,8 @@ EOM
           --quilt:    Include Quilt repositories
           --caliper:  Include Caliper repositories
           --ursa:     Include Ursa repositories
-          --grid:     Include Grid repositories                
+          --grid:     Include Grid repositories
+          --avalon:   Include Avalon repositories
           --projects: Include Project repositories
           --labs:     Include Labs repositories
           --other:    Include Other repositories

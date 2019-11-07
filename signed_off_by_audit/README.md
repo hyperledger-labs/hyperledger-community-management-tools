@@ -39,7 +39,8 @@ get_signed_off_by_audit.sh [--since mm/dd/yyyy] [--until mm/dd/yyyy] [project-se
    --quilt:    Include Quilt repositories
    --caliper:  Include Caliper repositories
    --ursa:     Include Ursa repositories
-   --grid:     Include Grid repositories                
+   --grid:     Include Grid repositories
+   --avalon:   Include Avalon repositories
    --projects: Include Project repositories
    --labs:     Include Labs repositories
    --other:    Include Other repositories
