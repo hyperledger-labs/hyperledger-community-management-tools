@@ -19,6 +19,13 @@ aries_repositories=(
   https://github.com/hyperledger/aries.git
 )
 
+besu_repositories=(
+  https://github.com/hyperledger/besu.git
+  https://github.com/hyperledger/besu-docs.git
+  https://github.com/hyperledger/besu-permissioning-smart-contracts.git
+  https://github.com/hyperledger/homebrew-besu.git
+)
+
 burrow_repositories=(
   https://github.com/hyperledger/burrow.git
 )
@@ -186,6 +193,7 @@ other_repositories=(
 
 project_repositories=(
   "${aries_repositories[@]}"
+  "${besu_repositories[@]}"
   "${burrow_repositories[@]}"
   "${caliper_repositories[@]}"
   "${cello_repositories[@]}"
@@ -203,6 +211,7 @@ project_repositories=(
 
 all_repositories=(
   "${aries_repositories[@]}"
+  "${besu_repositories[@]}"
   "${burrow_repositories[@]}"
   "${caliper_repositories[@]}"
   "${cello_repositories[@]}"

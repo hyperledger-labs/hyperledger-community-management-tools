@@ -40,6 +40,12 @@ case $key in
         filename+="-indy"
       fi
     ;;
+    ${INCLUDE_PROJECT_OPTIONS:+--besu})
+      if [[ "$all_specified" == FALSE ]] ; then
+        repositories+=( "${besu_repositories[@]}" )
+        filename+="-besu"
+      fi
+    ;;
     ${INCLUDE_PROJECT_OPTIONS:+--composer})
       if [[ "$all_specified" == FALSE ]] ; then
         repositories+=( "${composer_repositories[@]}" )
@@ -144,6 +150,7 @@ EOM
           --iroha:    Include Iroha repositories
           --burrow:   Include Burrow repositories
           --indy:     Include Indy repositories
+          --besu:     Include Besu repositories
           --composer: Include Composer repositories
           --cello:    Include Cello repositories
           --explorer: Include Explorer repositories
