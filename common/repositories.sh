@@ -133,7 +133,6 @@ explorer_repositories=(
 
 quilt_repositories=(
   https://github.com/hyperledger/quilt.git
-  https://github.com/hyperledger/quilt-crypto-conditions.git
 )
 
 ursa_repositories=(
