@@ -179,6 +179,10 @@ ursa_repositories=(
 
 ## LABS
 
+avalon_repositories=(
+  https://github.com/hyperledger/avalon.git
+)
+
 labs_repositories=(
   https://github.com/hyperledger-labs/blockchain-analyzer.git
   https://github.com/hyperledger-labs/blockchain-automation-framework.git
@@ -240,6 +244,7 @@ project_repositories=(
   "${composer_repositories[@]}"
   "${fabric_repositories[@]}"
   "${grid_repositories[@]}"
+  "${avalon_repositories[@]}"
   "${indy_repositories[@]}"
   "${iroha_repositories[@]}"
   "${quilt_repositories[@]}"
@@ -259,6 +264,7 @@ all_repositories=(
   "${composer_repositories[@]}"
   "${fabric_repositories[@]}"
   "${grid_repositories[@]}"
+  "${avalon_repositories[@]}"
   "${indy_repositories[@]}"
   "${iroha_repositories[@]}"
   "${quilt_repositories[@]}"
