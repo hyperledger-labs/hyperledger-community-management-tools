@@ -177,6 +177,59 @@ transact_repositories=(
   https://github.com/hyperledger/transact-sdk-go.git
 )
 
+iroha_repositories=(
+  https://github.com/hyperledger/iroha-android.git
+  https://github.com/hyperledger/iroha-deploy.git
+  https://github.com/hyperledger/iroha-dotnet.git
+  https://github.com/hyperledger/iroha-ed25519.git
+  https://github.com/hyperledger/iroha-ios.git
+  https://github.com/hyperledger/iroha-java.git
+  https://github.com/hyperledger/iroha-javascript.git
+  https://github.com/hyperledger/iroha-python.git
+  https://github.com/hyperledger/iroha-scala.git
+  https://github.com/hyperledger/iroha.git
+)
+
+indy_repositories=(
+  https://github.com/hyperledger/indy-agent.git
+  https://github.com/hyperledger/indy-crypto.git
+  https://github.com/hyperledger/indy-docs.git
+  https://github.com/hyperledger/indy-hipe.git
+  https://github.com/hyperledger/indy-jenkins-pipeline-lib.git
+  https://github.com/hyperledger/indy-node.git
+  https://github.com/hyperledger/indy-plenum.git
+  https://github.com/hyperledger/indy-post-install-automation.git
+  https://github.com/hyperledger/indy-sdk.git
+  https://github.com/hyperledger/indy-test-automation.git
+)
+
+composer_repositories=(
+  https://github.com/hyperledger/composer-atom-plugin.git
+  https://github.com/hyperledger/composer-concerto-tools.git
+  https://github.com/hyperledger/composer-concerto.git
+  https://github.com/hyperledger/composer-knowledge-wiki.git
+  https://github.com/hyperledger/composer-sample-applications.git
+  https://github.com/hyperledger/composer-sample-models.git
+  https://github.com/hyperledger/composer-sample-networks.git
+  https://github.com/hyperledger/composer-tools.git
+  https://github.com/hyperledger/composer-vscode-plugin.git
+  https://github.com/hyperledger/composer.git
+)
+
+cello_repositories=(
+  https://gerrit.hyperledger.org/r/cello
+  https://gerrit.hyperledger.org/r/cello-analytics
+  https://gerrit.hyperledger.org/r/cello-k8s-operator
+)
+
+explorer_repositories=(
+  https://gerrit.hyperledger.org/r/blockchain-explorer
+)
+
+quilt_repositories=(
+  https://github.com/hyperledger/quilt.git
+)
+
 ursa_repositories=(
   https://github.com/hyperledger/ursa.git
   https://github.com/hyperledger/ursa-docs.git
