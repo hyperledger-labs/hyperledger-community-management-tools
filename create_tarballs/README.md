@@ -32,6 +32,7 @@ This script is used for creating GZIP'd tarballs that can be used by the license
           --caliper:  Include Caliper repositories
           --ursa:     Include Ursa repositories
           --grid:     Include Grid repositories
+          --avalon:   Include Avalon repositories
           --projects: Include Project repositories
           --labs:     Include Labs repositories
           --other:    Include Other repositories
