@@ -41,18 +41,23 @@ get_signed_off_by_audit.sh [--since mm/dd/yyyy] [--until mm/dd/yyyy] [project-se
    --caliper:  Include Caliper repositories
    --ursa:     Include Ursa repositories
    --grid:     Include Grid repositories
+   --aries:    Include Aries repositories
+   --transact: Include Transact repositories
    --avalon:   Include Avalon repositories
    --projects: Include Project repositories
    --labs:     Include Labs repositories
    --other:    Include Other repositories
    --gerrit:   Include Gerrit repositories
    --github:   Include Github repositories
-   --all:      Include all repositories
-               Does not include labs or other repositories. (default)
+   --all:      Include all repositories (default)
    --since:    Includes commits more recent than this date (mm/dd/yyyy).
                By default starts from the start of the repo.
    --until:    Includes commits older than this date (mm/dd/yyyy).
                By default ends at the end of the repo.
    --output-dir <dir>: Where should output be placed. (Default: /tmp)
    --help:     Shows this help message
+
+  NOTE: If no options are specified, it is as if you had specified --all
+  NOTE: Multiple repository options can be specified
+  NOTE: --all will override all commands for individual projects
 ```

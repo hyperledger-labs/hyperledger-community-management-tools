@@ -176,6 +176,8 @@ EOM
           --caliper:  Include Caliper repositories
           --ursa:     Include Ursa repositories
           --grid:     Include Grid repositories
+          --aries:    Include Aries repositories
+          --transact: Include Transact repositories
           --avalon:   Include Avalon repositories
           --projects: Include Project repositories
           --labs:     Include Labs repositories
