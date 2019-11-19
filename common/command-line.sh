@@ -40,6 +40,12 @@ case $key in
         filename+="-indy"
       fi
     ;;
+    ${INCLUDE_PROJECT_OPTIONS:+--besu})
+      if [[ "$all_specified" == FALSE ]] ; then
+        repositories+=( "${besu_repositories[@]}" )
+        filename+="-besu"
+      fi
+    ;;
     ${INCLUDE_PROJECT_OPTIONS:+--composer})
       if [[ "$all_specified" == FALSE ]] ; then
         repositories+=( "${composer_repositories[@]}" )
@@ -92,6 +98,12 @@ case $key in
       if [[ "$all_specified" == FALSE ]] ; then
         repositories+=( "${transact_repositories[@]}" )
         filename+="-transact"
+      fi
+    ;;
+    ${INCLUDE_PROJECT_OPTIONS:+--avalon})
+      if [[ "$all_specified" == FALSE ]] ; then
+        repositories+=( "${avalon_repositories[@]}" )
+        filename+="-avalon"
       fi
     ;;
     ${INCLUDE_PROJECT_OPTIONS:+--projects})
@@ -156,13 +168,15 @@ EOM
           --iroha:    Include Iroha repositories
           --burrow:   Include Burrow repositories
           --indy:     Include Indy repositories
+          --besu:     Include Besu repositories
           --composer: Include Composer repositories
           --cello:    Include Cello repositories
           --explorer: Include Explorer repositories
           --quilt:    Include Quilt repositories
           --caliper:  Include Caliper repositories
           --ursa:     Include Ursa repositories
-          --grid:     Include Grid repositories                
+          --grid:     Include Grid repositories
+          --avalon:   Include Avalon repositories
           --projects: Include Project repositories
           --labs:     Include Labs repositories
           --other:    Include Other repositories
