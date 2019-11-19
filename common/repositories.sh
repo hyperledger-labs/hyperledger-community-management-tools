@@ -10,6 +10,7 @@ aries_repositories=(
   https://github.com/hyperledger/aries-core.git
   https://github.com/hyperledger/aries-framework-dotnet.git
   https://github.com/hyperledger/aries-framework-go.git
+  https://github.com/hyperledger/aries-framework-javascript.git
   https://github.com/hyperledger/aries-kms.git
   https://github.com/hyperledger/aries-kms-postgres.git
   https://github.com/hyperledger/aries-protocol-test-suite.git
@@ -30,18 +31,6 @@ aries_repositories=(
 
 avalon_repositories=(
   https://github.com/hyperledger/avalon.git
-)
-
-besu_repositories=(
-  https://github.com/hyperledger/besu.git
-  https://github.com/hyperledger/besu-docs.git
-  https://github.com/hyperledger/besu-permissioning-smart-contracts.git
-  https://github.com/hyperledger/homebrew-besu.git
-)
-
-blockchain_explorer_repositories=(
-  https://gerrit.hyperledger.org/r/blockchain-explorer
-  https://github.com/hyperledger/blockchain-explorer.git
 )
 
 besu_repositories=(
@@ -76,13 +65,11 @@ composer_repositories=(
   https://github.com/hyperledger/composer-vscode-plugin.git
 )
 
+explorer_repositories=(
+  https://github.com/hyperledger/blockchain-explorer.git
+)
+
 fabric_repositories=(
-  https://gerrit.hyperledger.org/r/fabric
-  https://gerrit.hyperledger.org/r/fabric-baseimage
-  https://gerrit.hyperledger.org/r/fabric-lib-go
-  https://gerrit.hyperledger.org/r/fabric-sdk-node
-  https://gerrit.hyperledger.org/r/fabric-sdk-py
-  https://gerrit.hyperledger.org/r/fabric-test
   https://github.com/hyperledger/fabric.git
   https://github.com/hyperledger/fabric-amcl.git
   https://github.com/hyperledger/fabric-baseimage.git
@@ -177,59 +164,6 @@ transact_repositories=(
   https://github.com/hyperledger/transact-sdk-go.git
 )
 
-iroha_repositories=(
-  https://github.com/hyperledger/iroha-android.git
-  https://github.com/hyperledger/iroha-deploy.git
-  https://github.com/hyperledger/iroha-dotnet.git
-  https://github.com/hyperledger/iroha-ed25519.git
-  https://github.com/hyperledger/iroha-ios.git
-  https://github.com/hyperledger/iroha-java.git
-  https://github.com/hyperledger/iroha-javascript.git
-  https://github.com/hyperledger/iroha-python.git
-  https://github.com/hyperledger/iroha-scala.git
-  https://github.com/hyperledger/iroha.git
-)
-
-indy_repositories=(
-  https://github.com/hyperledger/indy-agent.git
-  https://github.com/hyperledger/indy-crypto.git
-  https://github.com/hyperledger/indy-docs.git
-  https://github.com/hyperledger/indy-hipe.git
-  https://github.com/hyperledger/indy-jenkins-pipeline-lib.git
-  https://github.com/hyperledger/indy-node.git
-  https://github.com/hyperledger/indy-plenum.git
-  https://github.com/hyperledger/indy-post-install-automation.git
-  https://github.com/hyperledger/indy-sdk.git
-  https://github.com/hyperledger/indy-test-automation.git
-)
-
-composer_repositories=(
-  https://github.com/hyperledger/composer-atom-plugin.git
-  https://github.com/hyperledger/composer-concerto-tools.git
-  https://github.com/hyperledger/composer-concerto.git
-  https://github.com/hyperledger/composer-knowledge-wiki.git
-  https://github.com/hyperledger/composer-sample-applications.git
-  https://github.com/hyperledger/composer-sample-models.git
-  https://github.com/hyperledger/composer-sample-networks.git
-  https://github.com/hyperledger/composer-tools.git
-  https://github.com/hyperledger/composer-vscode-plugin.git
-  https://github.com/hyperledger/composer.git
-)
-
-cello_repositories=(
-  https://gerrit.hyperledger.org/r/cello
-  https://gerrit.hyperledger.org/r/cello-analytics
-  https://gerrit.hyperledger.org/r/cello-k8s-operator
-)
-
-explorer_repositories=(
-  https://gerrit.hyperledger.org/r/blockchain-explorer
-)
-
-quilt_repositories=(
-  https://github.com/hyperledger/quilt.git
-)
-
 ursa_repositories=(
   https://github.com/hyperledger/ursa.git
   https://github.com/hyperledger/ursa-docs.git
@@ -238,10 +172,6 @@ ursa_repositories=(
 )
 
 ## LABS
-
-avalon_repositories=(
-  https://github.com/hyperledger/avalon.git
-)
 
 labs_repositories=(
   https://github.com/hyperledger-labs/blockchain-analyzer.git
@@ -281,7 +211,6 @@ labs_repositories=(
 ## OTHER
 
 other_repositories=(
-  https://gerrit.hyperledger.org/r/ci-management
   https://github.com/hyperledger/ci-management.git
   https://github.com/hyperledger/CMSIG.git
   https://github.com/hyperledger/education.git
@@ -297,14 +226,13 @@ project_repositories=(
   "${aries_repositories[@]}"
   "${avalon_repositories[@]}"
   "${besu_repositories[@]}"
-  "${blockchain_explorer_repositories[@]}"
   "${burrow_repositories[@]}"
   "${caliper_repositories[@]}"
   "${cello_repositories[@]}"
   "${composer_repositories[@]}"
+  "${explorer_repositories[@]}"
   "${fabric_repositories[@]}"
   "${grid_repositories[@]}"
-  "${avalon_repositories[@]}"
   "${indy_repositories[@]}"
   "${iroha_repositories[@]}"
   "${quilt_repositories[@]}"
@@ -314,23 +242,9 @@ project_repositories=(
 )
 
 all_repositories=(
-  "${aries_repositories[@]}"
-  "${avalon_repositories[@]}"
-  "${besu_repositories[@]}"
-  "${blockchain_explorer_repositories[@]}"
-  "${burrow_repositories[@]}"
-  "${caliper_repositories[@]}"
-  "${cello_repositories[@]}"
-  "${composer_repositories[@]}"
-  "${fabric_repositories[@]}"
-  "${grid_repositories[@]}"
-  "${avalon_repositories[@]}"
-  "${indy_repositories[@]}"
-  "${iroha_repositories[@]}"
-  "${quilt_repositories[@]}"
-  "${sawtooth_repositories[@]}"
-  "${transact_repositories[@]}"
-  "${ursa_repositories[@]}"
+  "${project_repositories[@]}"
+  "${labs_repositories[@]}"
+  "${other_repositories[@]}"
 )
 
 # These two lines look backwards, but they are removing the pattern from the list of all repositories

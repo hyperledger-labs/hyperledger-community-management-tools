@@ -32,6 +32,8 @@ This script is used for creating GZIP'd tarballs that can be used by the license
           --caliper:  Include Caliper repositories
           --ursa:     Include Ursa repositories
           --grid:     Include Grid repositories
+          --aries:    Include Aries repositories
+          --transact: Include Transact repositories
           --avalon:   Include Avalon repositories
           --projects: Include Project repositories
           --labs:     Include Labs repositories
@@ -39,6 +41,10 @@ This script is used for creating GZIP'd tarballs that can be used by the license
           --gerrit:   Include Gerrit repositories
           --github:   Include Github repositories
           --all:      Include all repositories (default)
+          --since:    Includes commits more recent than this date (mm/dd/yyyy).
+                      By default starts from the start of the repo.
+          --until:    Includes commits older than this date (mm/dd/yyyy).
+                      By default ends at the end of the repo.
           --output-dir <dir>: Where should output be placed. (Default: /tmp)
           --help:     Shows this help message
 
