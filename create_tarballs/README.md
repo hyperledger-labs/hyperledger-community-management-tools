@@ -24,6 +24,7 @@ This script is used for creating GZIP'd tarballs that can be used by the license
           --iroha:    Include Iroha repositories
           --burrow:   Include Burrow repositories
           --indy:     Include Indy repositories
+          --besu:     Include Besu repositories
           --composer: Include Composer repositories
           --cello:    Include Cello repositories
           --explorer: Include Explorer repositories

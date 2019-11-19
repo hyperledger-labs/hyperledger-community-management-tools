@@ -44,6 +44,13 @@ blockchain_explorer_repositories=(
   https://github.com/hyperledger/blockchain-explorer.git
 )
 
+besu_repositories=(
+  https://github.com/hyperledger/besu.git
+  https://github.com/hyperledger/besu-docs.git
+  https://github.com/hyperledger/besu-permissioning-smart-contracts.git
+  https://github.com/hyperledger/homebrew-besu.git
+)
+
 burrow_repositories=(
   https://github.com/hyperledger/burrow.git
 )
