@@ -33,13 +33,15 @@ get_contributors.sh [--since mm/dd/yyyy] [--until mm/dd/yyyy] [project-selector]
    --iroha:    Include Iroha repositories
    --burrow:   Include Burrow repositories
    --indy:     Include Indy repositories
+   --besu:     Include Besu repositories
    --composer: Include Composer repositories
    --cello:    Include Cello repositories
    --explorer: Include Explorer repositories
    --quilt:    Include Quilt repositories
    --caliper:  Include Caliper repositories
    --ursa:     Include Ursa repositories
-   --grid:     Include Grid repositories                
+   --grid:     Include Grid repositories
+   --avalon:   Include Avalon repositories
    --projects: Include Project repositories
    --labs:     Include Labs repositories
    --other:    Include Other repositories
