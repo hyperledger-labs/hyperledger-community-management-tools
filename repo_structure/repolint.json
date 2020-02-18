@@ -22,7 +22,8 @@
               "files": [
                 "circle.yml", 
                 ".circleci/config.yml", 
-                "ci/azure-pipelines.yml"
+                "ci/azure-pipelines.yml",
+                ".ci/azure-pipelines.yml"
               ]
             }
           ],
