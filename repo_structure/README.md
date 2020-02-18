@@ -9,8 +9,8 @@ is a difference between the tool and this specification, the specification domin
 
 ### Files with Specified Content
 
-Repositories MUST have these files with the specific content in the liked files. These files MUST be
-at the root of the repository
+Repositories MUST have these files with the specific content in the linked files. These files MUST
+be at the root of the repository:
 
 - [`LICENSE`](LICENSE.md)
 - [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md)
