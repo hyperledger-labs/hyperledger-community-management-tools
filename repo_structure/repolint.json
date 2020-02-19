@@ -23,7 +23,10 @@
                 "circle.yml", 
                 ".circleci/config.yml", 
                 "ci/azure-pipelines.yml",
-                ".ci/azure-pipelines.yml"
+                ".ci/azure-pipelines.yml",
+                "Jenkinsfile",
+                "Jenkinsfile.ci",
+                "Jenkinsfile.cd"
               ]
             }
           ],
