@@ -124,12 +124,6 @@ case $key in
         filename+="-other"
       fi
     ;;
-    ${INCLUDE_PROJECT_OPTIONS:+--gerrit})
-      if [[ "$all_specified" == FALSE ]] ; then
-        repositories+=( "${gerrit_repositories[@]}" )
-        filename+="-gerrit"
-      fi
-    ;;
     ${INCLUDE_PROJECT_OPTIONS:+--github})
       if [[ "$all_specified" == FALSE ]] ; then
         repositories+=( "${github_repositories[@]}" )
@@ -182,7 +176,6 @@ EOM
           --projects: Include Project repositories
           --labs:     Include Labs repositories
           --other:    Include Other repositories
-          --gerrit:   Include Gerrit repositories
           --github:   Include Github repositories
           --all:      Include all repositories (default)
 EOM_PROJECT

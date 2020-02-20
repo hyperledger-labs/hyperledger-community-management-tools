@@ -1,5 +1,5 @@
 # `create_tarballs.sh`
-Creates a GZIP'd tarball of the latest source code for the specified repositories. It does this by cloning the source code from Gerrit or Github and then creating a GZIP'd tarball containing the checked out code. The tarball will be created in:
+Creates a GZIP'd tarball of the latest source code for the specified repositories. It does this by cloning the source code from Github and then creating a GZIP'd tarball containing the checked out code. The tarball will be created in:
 
 ```
 <output_dir>/<date>/hyperledger-source-<project-name>-<datetime>.tar.gz
@@ -38,7 +38,6 @@ This script is used for creating GZIP'd tarballs that can be used by the license
           --projects: Include Project repositories
           --labs:     Include Labs repositories
           --other:    Include Other repositories
-          --gerrit:   Include Gerrit repositories
           --github:   Include Github repositories
           --all:      Include all repositories (default)
           --since:    Includes commits more recent than this date (mm/dd/yyyy).
