@@ -47,7 +47,6 @@ get_signed_off_by_audit.sh [--since mm/dd/yyyy] [--until mm/dd/yyyy] [project-se
    --projects: Include Project repositories
    --labs:     Include Labs repositories
    --other:    Include Other repositories
-   --gerrit:   Include Gerrit repositories
    --github:   Include Github repositories
    --all:      Include all repositories (default)
    --since:    Includes commits more recent than this date (mm/dd/yyyy).
