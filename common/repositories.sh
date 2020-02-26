@@ -4,6 +4,7 @@
 
 aries_repositories=(
   https://github.com/hyperledger/aries.git
+  https://github.com/hyperledger/aries-acapy-controllers.git
   https://github.com/hyperledger/aries-acapy-plugin-toolbox.git
   https://github.com/hyperledger/aries-agent.git
   https://github.com/hyperledger/aries-ams-sqlite.git
@@ -115,6 +116,7 @@ indy_repositories=(
   https://github.com/hyperledger/indy-sdk.git
   https://github.com/hyperledger/indy-test-automation.git
   https://github.com/hyperledger/indy-vdri-aries.git
+  https://github.com/hyperledger/indy-vdr.git
 )
 
 iroha_repositories=(
