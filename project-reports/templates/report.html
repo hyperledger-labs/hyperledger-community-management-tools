@@ -36,6 +36,12 @@
         <td>{{ active_date }}</td>
       </tr>
     {%endif %}
+    {% if deprecation_date is not none %}
+      <tr>
+        <th>Deprecation Date</th>
+        <td>{{ deprecation_date }}</td>
+      </tr>
+    {%endif %}
     <tr>
       <th>First Commit Date</th>
       <td>{{ summary["first_commit"]|datetimeformat }}</td>
