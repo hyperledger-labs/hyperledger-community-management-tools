@@ -45,8 +45,10 @@ do
   fi
   cp ${script_dir}/repolint.json .
   npx repolinter >> ${outfile}
-  if [ ?$ ]; then
-    echo "FAILED" >> ${outfile}
+  if [ $? -eq 0 ]; then
+    echo "PASSED - $i" >> ${outfile}
+  else
+    echo "FAILED - $i" >> ${outfile}
   fi
 done
 
