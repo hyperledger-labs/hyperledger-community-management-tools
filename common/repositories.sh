@@ -176,6 +176,7 @@ labs_repositories=(
   https://github.com/hyperledger-labs/blockchain-analyzer.git
   https://github.com/hyperledger-labs/blockchain-automation-framework.git
   https://github.com/hyperledger-labs/blockchain-integration-framework.git
+  https://github.com/hyperledger-labs/blockchain-verifier.git
   https://github.com/hyperledger-labs/byzantine-config.git
   https://github.com/hyperledger-labs/convector.git
   https://github.com/hyperledger-labs/cordentity.git
