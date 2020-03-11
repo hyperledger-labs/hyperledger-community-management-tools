@@ -57,17 +57,6 @@ cello_repositories=(
   https://github.com/hypereldger/cello-analytics.git
 )
 
-composer_repositories=(
-  https://github.com/hyperledger/composer.git
-  https://github.com/hyperledger/composer-atom-plugin.git
-  https://github.com/hyperledger/composer-knowledge-wiki.git
-  https://github.com/hyperledger/composer-sample-applications.git
-  https://github.com/hyperledger/composer-sample-models.git
-  https://github.com/hyperledger/composer-sample-networks.git
-  https://github.com/hyperledger/composer-tools.git
-  https://github.com/hyperledger/composer-vscode-plugin.git
-)
-
 explorer_repositories=(
   https://github.com/hyperledger/blockchain-explorer.git
 )
@@ -233,7 +222,6 @@ project_repositories=(
   "${burrow_repositories[@]}"
   "${caliper_repositories[@]}"
   "${cello_repositories[@]}"
-  "${composer_repositories[@]}"
   "${explorer_repositories[@]}"
   "${fabric_repositories[@]}"
   "${grid_repositories[@]}"
