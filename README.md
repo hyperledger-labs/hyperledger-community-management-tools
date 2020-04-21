@@ -1,3 +1,5 @@
+[//]: # (SPDX-License-Identifier: CC-BY-4.0)
+
 # Hyperledger Community Management Tools
 Tools used to manage and evaluate the Hyperledger Community
 
