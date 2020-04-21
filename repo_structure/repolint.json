@@ -6,9 +6,9 @@
     },
     "rules": {
       "all": {
-        "license-file-exists:file-existence": ["error", {"files": ["LICENSE*", "COPYING*"]}],
-        "code-of-conduct-file-exists:file-existence": ["error", {"files": ["CODE_OF_CONDUCT.md"]}],
-        "security-file-exists:file-existence": ["error", {"files": ["SECURITY.md"]}],
+        "license-file-matches:file-hash": ["error", {"file": "LICENSE*", "hash":"b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1"}],
+        "code-of-conduct-file-matches:file-hash": ["error", {"file": "CODE_OF_CONDUCT.md", "hash":"d2719e3ce1c383567a5f1bfe8f5c5af2042b3e15b5620b8d8a4b5ada022289e4"}],
+        "security-file-matches:file-hash": ["error", {"file": "SECURITY.md", "hash":"68457718b668ca838596f4a0e47359ccc0f34fb7695605bc46c3248dfffc65ab"}],
 
         "readme-file-exists:file-existence": ["error", {"files": ["README.md", "README"]}],
         "readme-references-license:file-contents": ["error", {"files": ["README.md", "README"], "content": "license", "flags": "i"}],
