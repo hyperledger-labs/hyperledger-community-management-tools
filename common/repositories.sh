@@ -6,30 +6,19 @@ aries_repositories=(
   https://github.com/hyperledger/aries.git
   https://github.com/hyperledger/aries-acapy-controllers.git
   https://github.com/hyperledger/aries-acapy-plugin-toolbox.git
-  https://github.com/hyperledger/aries-agent.git
-  https://github.com/hyperledger/aries-ams-sqlite.git
   https://github.com/hyperledger/aries-cloudagent-python.git
-  https://github.com/hyperledger/aries-core.git
   https://github.com/hyperledger/aries-framework-dotnet.git
   https://github.com/hyperledger/aries-framework-go.git
   https://github.com/hyperledger/aries-framework-javascript.git
-  https://github.com/hyperledger/aries-kms-postgres.git
-  https://github.com/hyperledger/aries-kms.git
+  https://github.com/hyperledger/aries-mobileagent-xamarin.git
   https://github.com/hyperledger/aries-protocol-test-suite.git
   https://github.com/hyperledger/aries-rfcs.git
   https://github.com/hyperledger/aries-sdk-android.git
-  https://github.com/hyperledger/aries-sdk-dotnet.git
-  https://github.com/hyperledger/aries-sdk-go.git
-  https://github.com/hyperledger/aries-sdk-ios.git
   https://github.com/hyperledger/aries-sdk-java.git
   https://github.com/hyperledger/aries-sdk-javascript.git
-  https://github.com/hyperledger/aries-sdk-python.git
   https://github.com/hyperledger/aries-sdk-ruby.git
-  https://github.com/hyperledger/aries-sdk.git
   https://github.com/hyperledger/aries-staticagent-python.git
   https://github.com/hyperledger/aries-toolbox.git
-  https://github.com/hyperledger/aries-vdri-peer.git
-  https://github.com/hyperledger/aries-vdri.git
 )
 
 avalon_repositories=(
@@ -39,6 +28,7 @@ avalon_repositories=(
 besu_repositories=(
   https://github.com/hyperledger/besu.git
   https://github.com/hyperledger/besu-docs.git
+  https://github.com/hyperledger/besu-native.git
   https://github.com/hyperledger/besu-permissioning-smart-contracts.git
   https://github.com/hyperledger/homebrew-besu.git
 )
@@ -54,7 +44,7 @@ caliper_repositories=(
 
 cello_repositories=(
   https://github.com/hyperledger/cello.git
-  https://github.com/hypereldger/cello-analytics.git
+  https://github.com/hyperledger/cello-analytics.git
 )
 
 explorer_repositories=(
@@ -104,7 +94,6 @@ indy_repositories=(
   https://github.com/hyperledger/indy-plenum.git
   https://github.com/hyperledger/indy-sdk.git
   https://github.com/hyperledger/indy-test-automation.git
-  https://github.com/hyperledger/indy-vdri-aries.git
   https://github.com/hyperledger/indy-vdr.git
 )
 
