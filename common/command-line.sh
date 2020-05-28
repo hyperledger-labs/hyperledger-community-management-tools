@@ -46,6 +46,12 @@ case $key in
         filename+="-besu"
       fi
     ;;
+    ${INCLUDE_PROJECT_OPTIONS:+--cactus})
+      if [[ "$all_specified" == FALSE ]] ; then
+        repositories+=( "${cactus_repositories[@]}" )
+        filename+="-cello"
+      fi
+    ;;
     ${INCLUDE_PROJECT_OPTIONS:+--cello})
       if [[ "$all_specified" == FALSE ]] ; then
         repositories+=( "${cello_repositories[@]}" )
@@ -157,6 +163,7 @@ EOM
           --burrow:   Include Burrow repositories
           --indy:     Include Indy repositories
           --besu:     Include Besu repositories
+          --cactus:   Include Cactus repositories
           --cello:    Include Cello repositories
           --explorer: Include Explorer repositories
           --quilt:    Include Quilt repositories
@@ -213,5 +220,3 @@ then
   repositories="${all_repositories[@]}"
   filename+="-all"
 fi
-
-
