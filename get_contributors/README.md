@@ -34,6 +34,7 @@ get_contributors.sh [--since mm/dd/yyyy] [--until mm/dd/yyyy] [project-selector]
    --burrow:   Include Burrow repositories
    --indy:     Include Indy repositories
    --besu:     Include Besu repositories
+   --cactus:   Include Cactus repositories
    --cello:    Include Cello repositories
    --explorer: Include Explorer repositories
    --quilt:    Include Quilt repositories

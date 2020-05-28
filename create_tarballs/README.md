@@ -25,6 +25,7 @@ This script is used for creating GZIP'd tarballs that can be used by the license
           --burrow:   Include Burrow repositories
           --indy:     Include Indy repositories
           --besu:     Include Besu repositories
+          --cactus:   Include Cactus repositories
           --cello:    Include Cello repositories
           --explorer: Include Explorer repositories
           --quilt:    Include Quilt repositories

@@ -37,6 +37,10 @@ burrow_repositories=(
   https://github.com/hyperledger/burrow.git
 )
 
+cactus_repositories=(
+  https://github.com/hyperledger/cactus.git
+)
+
 caliper_repositories=(
   https://github.com/hyperledger/caliper.git
   https://github.com/hyperledger/caliper-benchmarks.git
@@ -210,6 +214,7 @@ project_repositories=(
   "${avalon_repositories[@]}"
   "${besu_repositories[@]}"
   "${burrow_repositories[@]}"
+  "${cactus_repositories[@]}"
   "${caliper_repositories[@]}"
   "${cello_repositories[@]}"
   "${explorer_repositories[@]}"
