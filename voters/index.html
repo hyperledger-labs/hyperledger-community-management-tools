@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="Hyperledger Voter Eligibility Check">
+		<title>Hypreledger Voter Eligibility Check</title>
+		<link rel="stylesheet" href="/pure-min.css">
+		<link rel="stylesheet" href="/grids-responsive-min.css">
+		<link rel="stylesheet" href="/font-awesome.css">
+		<link rel="stylesheet" href="styles.css">
+	</head>
+	<body>
+		<div class="splash-container">
+			<div class="splash">
+				<h1 style="text-align: center;">
+					<img src="HL_Logo_White-300x58.png" alt="">
+				</h1>
+				<p class="splash-subhead">
+				Check your email address to confirm<br>if you are eligible to vote:
+				</p>
+				<form id="frm">
+					<input id="email" type="text" name="email">
+					<input type="button" onclick="check()" value="Check">
+				</form>
+				<p id="success" class="splash-subhead" style="visibility: hidden">You are eligible to vote!</p>
+				<p id="failure" class="splash-subhead" style="visibility: hidden">You are not eligible to vote.<br>If you think this is an error, please email Arnaud.</p>
+			</div>
+		</div>
+	</body>
+	<script src="md5.js"></script>
+	<script src="hashes.js"></script>
+	<script>
+		function check() {
+			let email = document.getElementById("email").value;
+			console.log(email);
+			let hash = md5(email);
+			console.log(hash);
+			if (Hashes.check(hash)) {
+				success = document.getElementById("success");
+				success.style.visibility = "visible";
+				failure = document.getElementById("failure");
+				failure.style.visibility = "hidden";
+			} else {
+				success = document.getElementById("success");
+				success.style.visibility = "hidden";
+				failure = document.getElementById("failure");
+				failure.style.visibility = "visible";
+			}
+		}
+	</script>
+</html>

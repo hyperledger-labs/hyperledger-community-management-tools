@@ -147,6 +147,10 @@ case $key in
       output_dir=$2
       shift # past argument or value. 2nd shift below
     ;;
+    --hashjs-dir)
+      hashjs_dir=$2
+      shift
+    ;;
     --help)
       cat << EOM
         $0 [options]
@@ -192,6 +196,7 @@ EOM_DATE
       fi
       cat << EOM_STD_OPTIONS
           --output-dir <dir>: Where should output be placed. (Default: /tmp)
+          --hashjs-dir <dir>: Where should eligibility list be placed. (Default: output-dir)
           --help:     Shows this help message
 EOM_STD_OPTIONS
 

@@ -20,6 +20,7 @@ The `cleanup.sed` file will delete non-contributor entries (e.g., those created 
 * `sed`
 * `awk`
 * `sort`
+* `md5sum`
 
 ### Usage
 This script is used on a yearly basis to get a list of contributors in the past year for TSC election rolls.
