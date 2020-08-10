@@ -9,4 +9,5 @@
 /github@fabric-composer.org/d
 /you@example.com/d
 /@linuxfoundation.org/d
+/baf@accenture.com/d
 s/\(.*\) <\(.*\)>/\2|\1/
