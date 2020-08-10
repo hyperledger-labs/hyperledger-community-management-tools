@@ -20,6 +20,12 @@ script_dir="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 
 . ${script_dir}/../common/command-line.sh
 
+if [ "$(uname)" == "Darwin" ]; then
+  MD5SUM="md5 -r"
+else
+  MD5SUM="md5sum"
+fi
+
 today=`date -u +%Y-%m-%d-%H-%M-%S`
 outdir="${output_dir}"/${filename}-${today}
 hashdir="${hashjs_dir:-${outdir}}"
@@ -95,7 +101,7 @@ class Hashes {
 EOM_HASHJS_PRE
 
 for i in $(cut -d , -f 1 "${outdir}"/contributors.csv); do
-  hash=$(echo -n "${i}" | md5sum | cut -d ' ' -f 1)
+  hash=$(echo -n "${i}" | ${MD5SUM} | cut -d ' ' -f 1)
   echo "      \"${hash}\":\"\"," >> "${hashdir}"/hashes.js
 done
 
