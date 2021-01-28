@@ -35,17 +35,15 @@ Repositories MUST have these files. Named files MUST be at the root of the repos
 - `CHANGELOG.md` \
   A human readable list of recent changes. Changes should at least include the current release. This
   file may be maintainer curated or mechanically produced.
-- Testing code \
-  Code to test the code in the repository (such as unit tests), in a location appropriate for the language.
 - Continuous Integration / Continuous Delivery (CICD) configurations \
   Configurations needed to run CICD on Hyperledger provided systems.
 
 ### Recommended
 
-Repositories SHOULD have these files. These files SHOULD be at the root of the repository
+Repositories SHOULD have these files. Named files SHOULD be at the root of the repository
 
 - `NOTICE`
-- Apache License Header information in each source code file \
+- Apache License Header information in each source code file. \
   This SHOULD include the snippet `SPDX-License-Identifier: Apache-2.0` as part of the header.
 - Build files consistent with the implementation language
   - For JavaScript/Node.js a `package.json` file
@@ -53,6 +51,9 @@ Repositories SHOULD have these files. These files SHOULD be at the root of the r
   - For Java one of a Maven `pom.xml`, an Apache Ant `build.xml`, or a Gralde `build.gradle` file
   - For Python `setup.py` and `requirements.txt` files
   - //TODO C, Go, and Rust build files
+- Testing code \
+  Code to test the code in the repository (such as unit tests), in a location appropriate for the language. \
+  Not all repositories can be tested (homebrew, docs), which is the only reason this is a SHOULD.
 
 ### Prohibited
 
