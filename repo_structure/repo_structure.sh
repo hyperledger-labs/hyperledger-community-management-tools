@@ -39,13 +39,13 @@ do
   echo >> ${outfile}
   echo "Report for $i" >> ${outfile}
 
-  if [ -h "repolint.json" ]; then
-    echo custom repolint.json exists: >> ${outfile}
-    diff repolint.json ${script_dir}/repolint.json >> ${outfile}
-  fi
   cp ${script_dir}/repolint.json .
-  npx repolinter >> ${outfile}
-  if [ $? -eq 0 ]; then
+  npx repolinter -r ${script_dir}/repolint.json > repoliter.tmpresult
+  set pass=$?
+  # Filter out passing and not-run tests
+  grep -v ✔ repoliter.tmpresult | grep -v ℹ >> ${outfile}
+  rm repoliter.tmpresult
+  if [ ${pass} -eq 0 ]; then
     echo "PASSED - $i" >> ${outfile}
   else
     echo "FAILED - $i" >> ${outfile}

@@ -14,24 +14,24 @@
         "maintainers-file-exists:file-existence": ["error", {"files": ["MAINTAINERS.md", "MAINTAINERS.rst"]}],
         "contributing-file-exists:file-existence": ["error", {"files": ["CONTRIBUTING.md"]}],
         "changelog-file-exists:file-existence": ["error", {"files": ["CHANGELOG.md"]}],
-        "test-directory-exists:directory-existence": ["error", {"directories": ["**/test*", "**/specs", "**/**_test.go"], "nocase": true}],
         "integrates-with-ci:file-existence": [
-            "error",
-            {
-              "files": [
-                "circle.yml", 
-                ".circleci/config.yml", 
-                "ci/azure-pipelines.yml",
-                ".ci/azure-pipelines.yml",
-                "Jenkinsfile",
-                "Jenkinsfile.ci",
-                "Jenkinsfile.cd"
-              ]
-            }
-          ],
+          "error",
+          {
+            "files": [
+              "circle.yml",
+              ".circleci/config.yml",
+              "ci/azure-pipelines.yml",
+              ".ci/azure-pipelines.yml",
+              "Jenkinsfile",
+              "Jenkinsfile.ci",
+              "Jenkinsfile.cd"
+            ]
+          }
+        ],
 
         "notice-file-exists:file-existence": ["warning", {"files": ["NOTICE*"]}],
         "source-license-headers-exist:file-starts-with": ["warning", {"files": ["**/*.js", "!node_modules/**"], "lineCount": 5, "patterns": ["Copyright", "License"], "flags": "i"}],
+        "test-directory-exists:directory-existence": ["warning", {"directories": ["**/test*", "**/specs", "**/**_test.go"], "nocase": true}],
 
         "binaries-not-present:file-type-exclusion": ["error", {"type": ["**/*.exe", "**/*.dll", "!node_modules/**"]}]
       },
@@ -51,4 +51,4 @@
         "package-metadata-exists:file-existence": ["warning", {"files": ["setup.py", "requirements.txt"]}]
       }
     }
-  }
+}
