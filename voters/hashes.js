@@ -1,3 +1,9 @@
+/*
+ * Copyright contributors to Hyperledger.
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
 'use strict';
 
 class Hashes {
