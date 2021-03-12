@@ -72,7 +72,8 @@
             ".ci/azure-pipelines.yml",
             "Jenkinsfile",
             "Jenkinsfile.ci",
-            "Jenkinsfile.cd"
+            "Jenkinsfile.cd",
+            ".github/workflows/*.yml"
           ]
         }
       ],
