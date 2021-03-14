@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>PRs for the last 7 days</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+</head>
+
+<body>
+    <div class="content">
+        <div class="header">
+            <h2>
+                Here are the PRs for the last 7 days
+            </h2>
+        </div>
+        <ol class="org">
+            {{range .}}
+            <li>{{.Organization}}</li>
+            <ol class="repo">
+                {{range .PrRepoLists}}
+                <li>{{.Repository}}</li>
+                <ol class="pr-list">
+                    {{range .PRs}}
+                    <li><a href={{.HTMLURL}}>{{.Title}}</a></li>
+                    <br />
+                    {{end}}
+                </ol>
+                {{end}}
+            </ol>
+            {{end}}
+        </ol>
+    </div>
+</body>
+
+</html>

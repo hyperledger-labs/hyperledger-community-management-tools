@@ -1,0 +1,13 @@
+version: "3.6"
+
+services:
+  noteworthy-prs:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: noteworthy-pr
+    environment: 
+      - GITHUB_TOKEN=${GITHUB_TOKEN}
+      - PRETTY_PRINT_FILE_PATH=/app/resources/myfile.html
+    volumes: 
+      - .:/app/resources

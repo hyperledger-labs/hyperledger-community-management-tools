@@ -1,0 +1,94 @@
+body {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: rgb(236, 231, 231);
+}
+.content{
+    background-color: whitesmoke;
+    margin: 30px;
+}
+
+.header {
+    text-align: center;
+    padding: 20px;
+    background-color: #21adad;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+ol {
+    counter-reset: org_counter;
+    list-style: none;
+}
+
+li {
+    margin: 0.25rem;
+}
+
+ol li {
+    counter-increment: org_counter;
+    font-weight: bold;
+}
+
+ol ol {
+    counter-reset: repo-counter;
+}
+
+ol ol li {
+    counter-increment: repo-counter;
+    font-weight: 500;
+}
+
+ol ol ol {
+    counter-reset: pr-counter;
+}
+
+ol ol ol li {
+    counter-increment: pr-counter;
+    font-weight: 400;
+}
+
+ol li::before {
+    content: counter(org_counter);
+    background: #025c63;
+    line-height: 30px;
+    color: white;
+    text-align: center;
+    margin-right: 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: inline-block;
+    
+}
+ol ol li::before {
+    content: counter(repo-counter);
+    background: #03a1a1;
+}
+ol ol ol li::before {
+    content: counter(pr-counter);
+    background: #4fd2db;
+    
+}
+
+a {
+    color: rgb(17, 4, 6);
+}
+
+.org{
+    line-height: 1;
+    letter-spacing: 1px;
+    font-size: 22px;
+}
+
+.repo {
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+    font-size: 20px;
+    /* padding: 15px; */
+    margin-top: 12px;
+}
+
+.pr-list {
+    font-size: 16px;
+    letter-spacing: 1px;
+    margin-top: 12px;
+}
