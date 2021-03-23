@@ -26,7 +26,7 @@
         "error",
         {
           "files": ["SECURITY.md"],
-          "content": "https://wiki.hyperledger.org/display/SEC/Defect.Response",
+          "content": "https://wiki.hyperledger.org/display/SEC/Defect+Response",
           "fail-on-non-existent": true
         }
       ],
