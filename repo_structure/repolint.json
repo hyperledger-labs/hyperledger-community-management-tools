@@ -86,8 +86,8 @@
       "source-license-headers-exist:file-starts-with": [
         "warning",
         {
-          "files": ["**/*.js", "!node_modules/**"],
-          "lineCount": 5,
+          "files": ["**/*.js", "!**/node_modules/**", "**/*.go", "!**/vendor/**", "!**/*.pb.go", "!**/*.gen.go"],
+          "lineCount": 7,
           "patterns": ["Copyright", "License"],
           "flags": "i"
         }
@@ -102,7 +102,7 @@
       "binaries-not-present:file-type-exclusion": [
         "error",
         {
-          "type": ["**/*.exe", "**/*.dll", "!node_modules/**"]
+          "type": ["**/*.exe", "**/*.dll", "!**/node_modules/**"]
         }
       ]
     },
@@ -111,6 +111,14 @@
         "warning",
         {
           "files": ["package.json"]
+        }
+      ]
+    },
+    "language=go": {
+      "package-metadata-exists:file-existence": [
+        "warning",
+        {
+          "files": ["go.mod"]
         }
       ]
     },
