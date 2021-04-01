@@ -86,7 +86,18 @@
       "source-license-headers-exist:file-starts-with": [
         "warning",
         {
-          "files": ["**/*.js", "!**/node_modules/**", "**/*.go", "!**/vendor/**", "!**/*.pb.go", "!**/*.gen.go", "!**/third_party/**"],
+          "files": [
+            "**/*.js",
+            "**/*.ts",
+            "**/*.go",
+            "**/*.java",
+            "!**/node_modules/**",
+            "!**/vendor/**",
+            "!**/*.pb.go",
+            "!**/*.gen.go",
+            "!**/mocks/*.go",
+            "!**/third_party/**"
+          ],
           "lineCount": 7,
           "patterns": ["Copyright", "License"],
           "flags": "i"
