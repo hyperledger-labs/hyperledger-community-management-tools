@@ -56,12 +56,6 @@
           "files": ["CONTRIBUTING.md"]
         }
       ],
-      "changelog-file-exists:file-existence": [
-        "error",
-        {
-          "files": ["CHANGELOG.md"]
-        }
-      ],
       "integrates-with-ci:file-existence": [
         "error",
         {
@@ -75,6 +69,12 @@
             "Jenkinsfile.cd",
             ".github/workflows/*.yml"
           ]
+        }
+      ],
+      "changelog-file-exists:file-existence": [
+        "warning",
+        {
+          "files": ["CHANGELOG.md"]
         }
       ],
       "notice-file-exists:file-existence": [
