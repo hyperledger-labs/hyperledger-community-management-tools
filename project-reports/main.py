@@ -115,7 +115,7 @@ def get_summary(contributors):
 
     return summary
 
-def create_output_html(project_name, title, incubation_date, active_date, deprecation_date, contributors, show_ryg, show_details, show_contributors):
+def create_output_html(project_name, title, incubation_date, active_date, dormant_date, deprecation_date, contributors, show_ryg, show_details, show_contributors):
     now = datetime.datetime.now()
     one_month_ago = now + dateutil.relativedelta.relativedelta(months=-1)
     six_months_ago = now + dateutil.relativedelta.relativedelta(months=-6)
@@ -151,6 +151,7 @@ def create_output_html(project_name, title, incubation_date, active_date, deprec
         'generation_date_time': now.strftime("%Y-%b-%d %H:%M:%S"),
         'incubation_date': incubation_date,
         'active_date': active_date,
+        'dormant_date': dormant_date,
         'deprecation_date': deprecation_date,
         'total_contributors': total_contributors,
         'contributors_in_past_year': len(yearly_contributors),
@@ -306,12 +307,17 @@ def main():
         else:
             active_date = None
 
+        if 'dormant_date' in cfg[project].keys():
+            dormant_date = cfg[project]['dormant_date']
+        else:
+            dormant_date = None
+
         if 'deprecation_date' in cfg[project].keys():
             deprecation_date = cfg[project]['deprecation_date']
         else:
             deprecation_date = None
 
-        create_output_html(project, title, incubation_date, active_date, deprecation_date, contributors, args.show_ryg, args.details, args.show_contributors)
+        create_output_html(project, title, incubation_date, active_date, dormant_date, deprecation_date, contributors, args.show_ryg, args.details, args.show_contributors)
 
 
 if __name__ == "__main__":
