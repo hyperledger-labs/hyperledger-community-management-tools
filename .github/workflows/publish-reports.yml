@@ -20,14 +20,15 @@ jobs:
         python -m pip install --upgrade pip
         pip install flake8 pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-    - name: Run reports
+    - name: Run Project Reports
       run: |
         cd project-reports
         python main.py -u $GITHUB_ACTOR -p ${{ secrets.GITHUB_TOKEN }} -d -s
+        python main.py --cfg all.cfg -u $GITHUB_ACTOR -p ${{ secrets.GITHUB_TOKEN }} -d -s
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2.3.1
       with:
         # Artifact name
-        name: reports
+        name: project-reports
         # A file, directory or wildcard pattern that describes what to upload
         path: project-reports/html/*
