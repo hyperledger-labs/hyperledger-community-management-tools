@@ -29,7 +29,7 @@ def get_api_results(url, username, password, paginate=False):
     results = r.json()
 
     if paginate and 'next' in r.links.keys():
-      results.extend(get_api_results(r.links['next']['url'], username, password)) 
+      results.extend(get_api_results(r.links['next']['url'], username, password, paginate)) 
 
     return results
 
