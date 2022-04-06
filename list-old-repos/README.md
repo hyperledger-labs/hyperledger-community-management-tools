@@ -29,7 +29,7 @@ optional arguments:
   -p PASSWORD, --password PASSWORD
                         Github access token to use for API calls
   -o ORG, --org ORG     GitHub organization (required)
-  -d, --details         Include last commit date in output.
+  -d, --details         Include last commit date in output
   -w WHEN, --when WHEN  Include repos with last commit prior to date (required
                         YYYY-mm-dd)
 ```

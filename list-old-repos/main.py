@@ -77,7 +77,7 @@ def main():
         required=False)
     parser.add_argument("-o", "--org", help="GitHub organization (required)",
         required=True)
-    parser.add_argument("-d", "--details", help="Include last commit date in output.",
+    parser.add_argument("-d", "--details", help="Include last commit date in output",
         default=False, action='store_true')
     parser.add_argument("-w", "--when", help="Include repos with last commit prior to date (required YYYY-mm-dd)",
         required=True, type=lambda s: datetime.strptime(s, '%Y-%m-%d'))
