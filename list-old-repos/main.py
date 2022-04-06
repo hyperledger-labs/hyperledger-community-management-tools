@@ -6,8 +6,7 @@ import time
 import getpass
 from jinja2 import Template
 import dateutil.parser
-import datetime
-from datetime import timezone
+from datetime import datetime, timezone
 import requests
 import argparse
 
@@ -60,10 +59,11 @@ def list_old_repositories(org, username, password, when, details):
         last_commit_date = dateutil.parser.isoparse(get_last_commit_date(r, username, password))
         if last_commit_date <= when.replace(tzinfo=timezone.utc):
             if details:
-                old_repos.append("{},{}".format(r, last_commit_date))
+                old_repos.append("{},{}".format(last_commit_date, r))
             else:
                 old_repos.append(r)
 
+    print("Repos where HEAD commit occurred prior to {}".format(when))
     for r in old_repos:
         print(r)
 
@@ -73,14 +73,14 @@ def main():
         help="Github username to use for API calls (required)",
         required=True)
     parser.add_argument("-p", "--password",
-        help="Github access token to use for API calls (required)",
+        help="Github access token to use for API calls",
         required=False)
-    parser.add_argument("-o", "--org", help="GitHub organization",
+    parser.add_argument("-o", "--org", help="GitHub organization (required)",
         required=True)
     parser.add_argument("-d", "--details", help="Include last commit date in output.",
         default=False, action='store_true')
-    parser.add_argument("-w", "--when", help="Include repos with last commit prior to date (%Y-%m-%d).",
-        required=True, type=lambda s: datetime.datetime.strptime(s, '%Y-%m-%d'))
+    parser.add_argument("-w", "--when", help="Include repos with last commit prior to date (required YYYY-mm-dd)",
+        required=True, type=lambda s: datetime.strptime(s, '%Y-%m-%d'))
     args = parser.parse_args()
 
     username = args.username
