@@ -34,7 +34,7 @@ def get_api_results(url, username, password, paginate=False):
 
 
 def get_non_archived_repositories_for_org(gh_org, username, password):
-    t = Template("https://api.github.com/orgs/{{org}}/repos?page=1")
+    t = Template("https://api.github.com/orgs/{{org}}/repos?per_page=100&page=1")
     url = t.render(org=gh_org)
     results = get_api_results(url, username, password, paginate=True)
 
