@@ -32,3 +32,9 @@ Github IDs for the set of initial committers.
   - [Get Lines of Code README](./get_lines_of_code/README.md)
 - **create_tarballs** - creates tarballs of the latest source in the specified repositories
   - [Create tarballs README](./create_tarballs/README.md)
+- **list-old-repos** - creates a list of repositories for a specified organization where the last commit on the main branch is older than a specified date.
+  - [List Old Repos README](./list-old-repos/README.md)
+- **repo_structure** - provides a report about how a project lines up with the common repository structure.
+  - [Common Repository Structure README](./repo_structure/README.md)
+- **signed_off_by_audit** - creates a list of contributors who landed change sets without the 'Signed-off-by' tag from all source repositories (as defined in `../common/repositories.sh`).
+  - [Signed-off by Audit README](./signed_off_by_audit/README.md)
