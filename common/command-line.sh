@@ -28,12 +28,6 @@ case $key in
         filename+="-iroha"
       fi
     ;;
-    ${INCLUDE_PROJECT_OPTIONS:+--burrow})
-      if [[ "$all_specified" == FALSE ]] ; then
-        repositories+=( "${burrow_repositories[@]}" )
-        filename+="-burrow"
-      fi
-    ;;
     ${INCLUDE_PROJECT_OPTIONS:+--indy})
       if [[ "$all_specified" == FALSE ]] ; then
         repositories+=( "${indy_repositories[@]}" )
@@ -56,12 +50,6 @@ case $key in
       if [[ "$all_specified" == FALSE ]] ; then
         repositories+=( "${cello_repositories[@]}" )
         filename+="-cello"
-      fi
-    ;;
-    ${INCLUDE_PROJECT_OPTIONS:+--explorer})
-      if [[ "$all_specified" == FALSE ]] ; then
-        repositories+=( "${explorer_repositories[@]}" )
-        filename+="-explorer"
       fi
     ;;
     ${INCLUDE_PROJECT_OPTIONS:+--quilt})
@@ -98,12 +86,6 @@ case $key in
       if [[ "$all_specified" == FALSE ]] ; then
         repositories+=( "${transact_repositories[@]}" )
         filename+="-transact"
-      fi
-    ;;
-    ${INCLUDE_PROJECT_OPTIONS:+--avalon})
-      if [[ "$all_specified" == FALSE ]] ; then
-        repositories+=( "${avalon_repositories[@]}" )
-        filename+="-avalon"
       fi
     ;;
     ${INCLUDE_PROJECT_OPTIONS:+--projects})
@@ -164,19 +146,16 @@ EOM
           --fabric:   Include Fabric repositories
           --sawtooth: Include Sawtooth repositories
           --iroha:    Include Iroha repositories
-          --burrow:   Include Burrow repositories
           --indy:     Include Indy repositories
           --besu:     Include Besu repositories
           --cactus:   Include Cactus repositories
           --cello:    Include Cello repositories
-          --explorer: Include Explorer repositories
           --quilt:    Include Quilt repositories
           --caliper:  Include Caliper repositories
           --ursa:     Include Ursa repositories
           --grid:     Include Grid repositories
           --aries:    Include Aries repositories
           --transact: Include Transact repositories
-          --avalon:   Include Avalon repositories
           --projects: Include Project repositories
           --labs:     Include Labs repositories
           --other:    Include Other repositories

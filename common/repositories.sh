@@ -21,20 +21,12 @@ aries_repositories=(
   https://github.com/hyperledger/aries-toolbox.git
 )
 
-avalon_repositories=(
-  https://github.com/hyperledger/avalon.git
-)
-
 besu_repositories=(
   https://github.com/hyperledger/besu.git
   https://github.com/hyperledger/besu-docs.git
   https://github.com/hyperledger/besu-native.git
   https://github.com/hyperledger/besu-permissioning-smart-contracts.git
   https://github.com/hyperledger/homebrew-besu.git
-)
-
-burrow_repositories=(
-  https://github.com/hyperledger/burrow.git
 )
 
 cactus_repositories=(
@@ -49,10 +41,6 @@ caliper_repositories=(
 cello_repositories=(
   https://github.com/hyperledger/cello.git
   https://github.com/hyperledger/cello-analytics.git
-)
-
-explorer_repositories=(
-  https://github.com/hyperledger/blockchain-explorer.git
 )
 
 fabric_repositories=(
@@ -211,13 +199,10 @@ other_repositories=(
 
 project_repositories=(
   "${aries_repositories[@]}"
-  "${avalon_repositories[@]}"
   "${besu_repositories[@]}"
-  "${burrow_repositories[@]}"
   "${cactus_repositories[@]}"
   "${caliper_repositories[@]}"
   "${cello_repositories[@]}"
-  "${explorer_repositories[@]}"
   "${fabric_repositories[@]}"
   "${grid_repositories[@]}"
   "${indy_repositories[@]}"
