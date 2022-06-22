@@ -1,0 +1,45 @@
+name: Repo Dates
+
+on:
+  workflow_dispatch:
+    inputs:
+      github-org:
+        type: choice
+        description: Which org to check
+        options:
+        - hyperledger
+        - hyperledger-labs
+        required: true
+      start-date:
+        type: string
+        description: Start date YYYY-MM-DD
+        required: true
+
+jobs:
+  run-report:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.10
+      uses: actions/setup-python@v2
+      with:
+        python-version: "3.10"
+    - name: Install dependencies
+      run: |
+        cd list-old-repos
+        python -m pip install --upgrade pip
+        pip install flake8 pytest
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+    - name: Run Old Repos
+      run: |
+        cd list-old-repos
+        python main.py -t ${{ secrets.GITHUB_TOKEN }} -o ${{ inputs.github-org }} -d -w ${{ inputs.start-date }} | tee old-repos-${{ inputs.github-org }}-${{ inputs.start-date }}.csv
+    - name: Upload reports
+      uses: actions/upload-artifact@v2.3.1
+      with:
+        # Artifact name
+        name: old-repos-${{ inputs.github-org }}-${{ inputs.start-date }}
+        # A file, directory or wildcard pattern that describes what to upload
+        path: list-old-repos/*.csv
