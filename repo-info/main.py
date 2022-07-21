@@ -4,12 +4,11 @@
 
 import getpass
 from jinja2 import Template
-import dateutil.parser
-from datetime import datetime, timezone
+import json
 import requests
 import argparse
 
-def query_github_repository(gh_org, token):
+def query_github_repositories(gh_org, token):
   q = Template('''
     {
       organization(login: "{{org}}") {
@@ -56,7 +55,7 @@ def query_github_repository(gh_org, token):
                     'createdAt':i['node']['createdAt'],
                     'description': i['node']['description'],
                     'isArchived':i['node']['isArchived'],
-                    'primaryLanguage': i['node']['primaryLanguage']['name'],
+                    'primaryLanguage': i['node']['primaryLanguage']['name'] if (i['node']['primaryLanguage'] != None) else 'not specified',
                     'stargazerCount': i['node']['stargazerCount']})
 
     has_next_page = results['data']['organization']['repositories']['pageInfo']['hasNextPage']
@@ -65,10 +64,10 @@ def query_github_repository(gh_org, token):
   return repos
 
 
-def print_repo_info(org, token, when, details):
+def print_repo_info(org, token):
   repos = query_github_repositories(org, token)
 
-  print(repos)
+  print(json.dumps(repos, indent=2))
 
 def main():
   parser = argparse.ArgumentParser(description="Provide information about GitHub repositories within an organization")
@@ -84,7 +83,7 @@ def main():
   if not token:
       token = getpass.getpass("Please enter github access token:")
 
-  print_repo_info(args.org, token, args.when, args.details)
+  print_repo_info(args.org, token)
 
 
 if __name__ == "__main__":
