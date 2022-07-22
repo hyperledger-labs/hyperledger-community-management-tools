@@ -182,7 +182,19 @@ def dump_repo_info(org, token):
 
   for r in repos:
     r['pullRequests'] = get_pull_requests(org, r['name'], token)
+    r['pullRequestsTotalCount'] = len(r['pullRequests'])
+    if (r['pullRequestsTotalCount'] > 0):
+      r['prMergedCount'] = len(list(filter(lambda x:x['state'] == 'MERGED', r['pullRequests'])))
+      r['prClosedCount'] = len(list(filter(lambda x:x['state'] == 'CLOSED', r['pullRequests'])))
+      r['prOpenedCount'] = len(list(filter(lambda x:x['state'] == 'OPEN', r['pullRequests'])))
+      r['prUniqueAuthors'] = list(set( [ item['author'] for item in r['pullRequests'] ] ))
+      r['prUniqueAuthorCount'] = len(r['prUniqueAuthors'])
+      r['prUniqueParticipants'] = list(set([x for l in [ item['participants'] for item in r['pullRequests'] ] for x in l]))
+      r['prUniqueParticipantCount'] = len(r['prUniqueParticipants'])
     r['releases'] = get_releases(org, r['name'], token)
+    r['releaseCount'] = len(r['releases'])
+    r['releaseCreators'] = list(set( [ item['createdBy'] for item in r['releases'] ]))
+    r['releaseCreatorCount'] = len(r['releaseCreators'])
 
   if not os.path.exists('output_files'):
     os.mkdir('output_files')
