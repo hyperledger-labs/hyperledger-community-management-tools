@@ -34,7 +34,7 @@ Github IDs for the set of initial committers.
   - [Create tarballs README](./create_tarballs/README.md)
 - **list-old-repos** - creates a list of repositories for a specified organization where the last commit on the main branch is older than a specified date.
   - [List Old Repos README](./list-old-repos/README.md)
-- **org-repo-info** - generates a JSON file ocntaining information for a specified organization
+- **org-repo-info** - generates a JSON file containing information for a specified organization
   - [Org Repo Info README](./org-repo-info/README.md)
 - **repo_structure** - provides a report about how a project lines up with the common repository structure.
   - [Common Repository Structure README](./repo_structure/README.md)
