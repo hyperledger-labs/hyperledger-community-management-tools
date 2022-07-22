@@ -177,7 +177,7 @@ def get_releases(gh_org, gh_repo, token):
 #
 # Get the repository information for an organization and dump it to stdout
 #
-def print_repo_info(org, token):
+def dump_repo_info(org, token):
   repos = query_github_repositories(org, token)
 
   for r in repos:
@@ -209,7 +209,7 @@ def main():
   if not token:
     token = getpass.getpass("Please enter github access token:")
 
-  print_repo_info(args.org, token)
+  dump_repo_info(args.org, token)
 
 
 if __name__ == "__main__":
