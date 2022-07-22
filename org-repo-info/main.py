@@ -14,6 +14,7 @@ import argparse
 # Get the repositories for a given GitHub organization
 #
 def query_github_repositories(gh_org, token):
+  print("Getting repositories for {}".format(gh_org))
   q = Template('''
     {
       organization(login: "{{org}}") {
@@ -69,6 +70,7 @@ def query_github_repositories(gh_org, token):
 # Get the pull requests for a given GitHub org and repository
 #
 def get_pull_requests(gh_org, gh_repo, token):
+  print("Getting pull requests for {}".format(os.path.join(gh_org, gh_repo)))
   q = Template('''
     {
       repository(name: "{{repo}}", owner: "{{org}}") {
@@ -134,6 +136,7 @@ def get_pull_requests(gh_org, gh_repo, token):
 # Get the releases for a given GitHub org and repository
 #
 def get_releases(gh_org, gh_repo, token):
+  print("Getting releases for {}".format(os.path.join(gh_org, gh_repo)))
   q = Template(''' { repository(name: "{{repo}}", owner: "{{org}}") {
         releases(first: 100, orderBy: {field: CREATED_AT, direction: ASC}{{after}}) {
           pageInfo {
@@ -201,8 +204,8 @@ def dump_repo_info(org, token):
   if not os.path.exists(path):
     os.mkdir(path)
   now = datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
-  filename = path + '/repo-info-' + now + '.json'
-  with open(filename, 'w') as outfile:
+  filename = 'repo-info-' + now + '.json'
+  with open(os.path.join(path, filename), 'w') as outfile:
     json.dump(repos, outfile, sort_keys=True, indent=2)
 
 
