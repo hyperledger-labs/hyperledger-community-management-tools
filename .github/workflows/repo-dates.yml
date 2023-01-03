@@ -37,7 +37,7 @@ jobs:
         cd list-old-repos
         python main.py -t ${{ secrets.GITHUB_TOKEN }} -o ${{ inputs.github-org }} -d -w ${{ inputs.start-date }} | tee old-repos-${{ inputs.github-org }}-${{ inputs.start-date }}.csv
     - name: Upload reports
-      uses: actions/upload-artifact@v2.3.1
+      uses: actions/upload-artifact@v3
       with:
         # Artifact name
         name: old-repos-${{ inputs.github-org }}-${{ inputs.start-date }}
