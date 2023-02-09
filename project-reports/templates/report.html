@@ -30,10 +30,10 @@
         <td>{{ incubation_date }}</td>
       </tr>
     {%endif %}
-    {% if active_date is not none %}
+    {% if graduated_date is not none %}
       <tr>
-        <th>Active Date</th>
-        <td>{{ active_date }}</td>
+        <th>Graduated Date</th>
+        <td>{{ graduated_date }}</td>
       </tr>
     {%endif %}
     {% if deprecation_date is not none %}
@@ -89,42 +89,57 @@
       <tfoot>
         <tr>
           <td colspan="4">
-            <sup>1</sup>At least one contribution in the past six months
+            <sup>1</sup>First contribution in the past month
           </td>
         </tr>
         <tr>
           <td colspan="4">
-            <sup>2</sup>Last contribution made more than six months ago
+            <sup>2</sup>Made more than one contribution to the project
           </td>
         </tr>
         <tr>
           <td colspan="4">
-            <sup>3</sup>First contribution in the past month
+            <sup>3</sup>Core contributors have contributed 80% of the code
           </td>
         </tr>
         <tr>
           <td colspan="4">
-            <sup>4</sup>Made more than one contribution to the project
+            <sup>4</sup>Regular contributors have contributed 95% of the code (includes core contributors)
           </td>
         </tr>
         <tr>
           <td colspan="4">
-            <sup>5</sup>Core contributors have contributed 80% of the code
+            <sup>5</sup>total contributors - regular contributors
           </td>
         </tr>
         <tr>
           <td colspan="4">
-            <sup>6</sup>Regular contributors have contributed 95% of the code (includes core contributors)
+            <sup>6</sup>At least one contribution in the past six months
           </td>
         </tr>
         <tr>
           <td colspan="4">
-            <sup>7</sup>number of active contributors / total contributors
+            <sup>7</sup>Last contribution made more than six months ago
           </td>
         </tr>
         <tr>
           <td colspan="4">
-            <sup>8</sup>number of repeat contributors / total contributors
+            <sup>8</sup>Active core contributors have contributed 80% of the code and have had at least one contribution in the past six months
+          </td>
+        </tr>
+        <tr>
+          <td colspan="4">
+            <sup>9</sup>Active regular contributors have contributed 95% of the code (includes core contributors) and have had at least one contribution in the past six months
+          </td>
+        </tr>
+        <tr>
+          <td colspan="4">
+            <sup>10</sup>number of active contributors / total contributors
+          </td>
+        </tr>
+        <tr>
+          <td colspan="4">
+            <sup>11</sup>number of repeat contributors / total contributors
           </td>
         </tr>
       </tfoot>
@@ -135,38 +150,45 @@
         <td>{{contributors_in_past_year}}</td>
       </tr>
       <tr>
-        <th>Active Contributors<sup>1</sup></th>
-        <td>{{active_contributors|length}}</td>
-        <th>Inactive Contributors<sup>2</sup></th>
-        <td>{{inactive_contributors|length}}</td>
-      </tr>
-      <tr>
-        <th>New Contributors<sup>3</sup></th>
+        <th>New Contributors<sup>1</sup></th>
         <td>{{new_contributors|length}}</td>
-        <th>Repeat Contributors<sup>4</sup></th>
+        <th>Repeat Contributors<sup>2</sup></th>
         <td>{{repeat_contributors|length}}</td>
       </tr>
       <tr>
-        <th>Core Contributors<sup>5</sup></th>
+        <th>Core Contributors (Life of Project)<sup>3</sup></th>
         <td>{{core_contributors|length}}</td>
         <th>Core Contributors %</th>
-        <td>{{'%0.2f' % ((core_contributors|length / total_contributors) * 100)}}
+        <td>{{'%0.2f' % ((core_contributors|length / total_contributors) * 100)}}</td>
+      </tr>
       <tr>
-        <th>Regular Contributors<sup>6</sup></th>
+        <th>Regular Contributors (Life of Project)<sup>4</sup></th>
         <td>{{regular_contributors|length}}</td>
         <th>Regular Contributors %</th>
-        <td>{{'%0.2f' % ((regular_contributors|length / total_contributors) * 100)}}
+        <td>{{'%0.2f' % ((regular_contributors|length / total_contributors) * 100)}}</td>
       </tr>
       <tr>
-        <th>Casual Contributors<sup>6</sup></th>
+        <th>Casual Contributors (Life of Project)<sup>5</sup></th>
         <td>{{total_contributors - regular_contributors|length}}</td>
         <th>Casual Contributors %</th>
-        <td>{{'%0.2f' % (((total_contributors - regular_contributors|length) / total_contributors) * 100)}}
+        <td>{{'%0.2f' % (((total_contributors - regular_contributors|length) / total_contributors) * 100)}}</td>
       </tr>
       <tr>
-        <th>Retention Rate<sup>7</sup></th>
+        <th>Active Contributors<sup>6</sup></th>
+        <td>{{active_contributors|length}}</td>
+        <th>Inactive Contributors<sup>7</sup></th>
+        <td>{{inactive_contributors|length}}</td>
+      </tr>
+      <tr>
+        <th>Active Core Contributors<sup>8</sup></th>
+        <td>{{active_core_contributors|length}}</td>
+        <th>Active Regular Contributors<sup>9</sup></th>
+        <td>{{active_regular_contributors|length}}</td>
+      </tr>
+      <tr>
+        <th>Retention Rate<sup>10</sup></th>
         <td>{{'%0.2f' % (active_contributors|length / total_contributors)}}</td>
-        <th>Level of Engagement<sup>8</sup></th>
+        <th>Level of Engagement<sup>11</sup></th>
         <td>{{'%0.2f' % (repeat_contributors|length / total_contributors)}}</td>
       </tr>
     </table>

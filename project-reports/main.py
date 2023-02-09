@@ -115,7 +115,7 @@ def get_summary(contributors):
 
     return summary
 
-def create_output_html(project_name, title, incubation_date, active_date, dormant_date, deprecation_date, contributors, show_ryg, show_details, show_contributors):
+def create_output_html(project_name, title, incubation_date, graduated_date, dormant_date, deprecation_date, contributors, show_ryg, show_details, show_contributors):
     now = datetime.datetime.now()
     one_month_ago = now + dateutil.relativedelta.relativedelta(months=-1)
     six_months_ago = now + dateutil.relativedelta.relativedelta(months=-6)
@@ -131,14 +131,17 @@ def create_output_html(project_name, title, incubation_date, active_date, dorman
     inactive_sorted = collections.OrderedDict(sorted(inactive_contributors.items(), key=lambda t:t[1]["last_commit"], reverse=True))
 
     core_contributors = get_contributors_who_contributed(contributors, .80)
+    active_core_contributors = {k: v for k, v in core_contributors.items() if datetime.datetime.fromtimestamp(v["last_commit"]) >= six_months_ago}
     core_sorted = collections.OrderedDict(sorted(core_contributors.items(), key=lambda t:t[1]["total_commits"], reverse=True))
 
     regular_contributors = get_contributors_who_contributed(contributors, .95)
+    active_regular_contributors = {k: v for k, v in regular_contributors.items() if datetime.datetime.fromtimestamp(v["last_commit"]) >= six_months_ago}
     regular_sorted = collections.OrderedDict(sorted(regular_contributors.items(), key=lambda t:t[1]["total_commits"], reverse=True))
 
     contributors_sorted = collections.OrderedDict(sorted(contributors.items(), key=lambda t:t[1]["total_commits"], reverse=True))
 
     total_contributors = len(contributors)
+    total_active_contributors = len(active_contributors)
     retention_color = calculate_retention_color((len(active_contributors) / total_contributors), (len(repeat_contributors) / total_contributors))
     diversity_color = calculate_diversity_color(len(regular_sorted) / total_contributors)
 
@@ -150,10 +153,11 @@ def create_output_html(project_name, title, incubation_date, active_date, dorman
         'title': title,
         'generation_date_time': now.strftime("%Y-%b-%d %H:%M:%S"),
         'incubation_date': incubation_date,
-        'active_date': active_date,
+        'graduated_date': graduated_date,
         'dormant_date': dormant_date,
         'deprecation_date': deprecation_date,
         'total_contributors': total_contributors,
+        'total_active_contributors': total_active_contributors,
         'contributors_in_past_year': len(yearly_contributors),
         'contributors': contributors_sorted,
         'active_contributors': active_contributors,
@@ -161,7 +165,9 @@ def create_output_html(project_name, title, incubation_date, active_date, dorman
         'repeat_contributors': repeat_sorted,
         'inactive_contributors': inactive_sorted,
         'core_contributors': core_sorted,
+        'active_core_contributors': active_core_contributors,
         'regular_contributors': regular_sorted,
+        'active_regular_contributors': active_regular_contributors,
         'summary': summary,
         'level_of_interest_color': "grey",
         'conversion_color': "grey",
@@ -302,10 +308,10 @@ def main():
         else:
             incubation_date = None
 
-        if 'active_date' in cfg[project].keys():
-            active_date = cfg[project]['active_date']
+        if 'graduated_date' in cfg[project].keys():
+            graduated_date = cfg[project]['graduated_date']
         else:
-            active_date = None
+            graduated_date = None
 
         if 'dormant_date' in cfg[project].keys():
             dormant_date = cfg[project]['dormant_date']
@@ -317,7 +323,7 @@ def main():
         else:
             deprecation_date = None
 
-        create_output_html(project, title, incubation_date, active_date, dormant_date, deprecation_date, contributors, args.show_ryg, args.details, args.show_contributors)
+        create_output_html(project, title, incubation_date, graduated_date, dormant_date, deprecation_date, contributors, args.show_ryg, args.details, args.show_contributors)
 
 
 if __name__ == "__main__":
