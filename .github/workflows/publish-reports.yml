@@ -26,7 +26,7 @@ jobs:
         python main.py -u $GITHUB_ACTOR -p ${{ secrets.GITHUB_TOKEN }} -d -s
         python main.py --cfg all.cfg -u $GITHUB_ACTOR -p ${{ secrets.GITHUB_TOKEN }} -d -s
     - name: Upload a Build Artifact
-      uses: actions/upload-artifact@v2.3.1
+      uses: actions/upload-artifact@v3
       with:
         # Artifact name
         name: project-reports
