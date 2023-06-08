@@ -1,0 +1,7 @@
+#theme: just-the-docs
+title: "Hyperledger Status"
+show_downloads: "false"
+has_children: true
+has_toc: true
+remote_theme: pmarsceill/just-the-docs
+url: "https://labs.hyperledger.org/hyperledger-community-management-tools/"
