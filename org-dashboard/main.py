@@ -5,7 +5,6 @@
 import getpass
 from jinja2 import Template
 import os
-import json
 import datetime
 import requests
 import argparse
@@ -53,7 +52,7 @@ def query_github_repositories(gh_org, token):
     for i in results['data']['organization']['repositories']['edges']:
       if not i['node']['isArchived'] and not i['node']['isPrivate']:
         name_with_owner = i['node']['nameWithOwner'] 
-        repos.append({'name': i['node']['name'],
+        repos.append({'name': '[' + i['node']['name'] + '](https://github.com/' + name_with_owner + ')',
                       'license': '![GitHub License](https://img.shields.io/github/license/' + name_with_owner + ')',
                       'last_commit': '![GitHub last commit](https://img.shields.io/github/last-commit/' + name_with_owner + ')',
                       'commits': '![GitHub total commit activity](https://img.shields.io/github/commit-activity/t/' + name_with_owner + ')',
@@ -83,13 +82,11 @@ def dashboard(org, token):
 {% endfor %}'''
   )
 
-  if not os.path.exists('output_files'):
-    os.mkdir('output_files')
-  path = os.path.join('output_files', org)
+  path = './output_files'
   if not os.path.exists(path):
     os.mkdir(path)
   now = datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
-  filename = 'org-dashboard-' + now + '.md'
+  filename = org + '-org-dashboard-' + now + '.md'
   md.stream(repos=repos, org=org).dump(os.path.join(path, filename))
 
 
