@@ -106,9 +106,9 @@ def get_summary(contributors):
     summary["total_deletions"] = 0
     for k,v in contributors.items():
         summary["total_commits"] += v["total_commits"]
-        if summary["first_commit"] == None or summary["first_commit"] > v["first_commit"]:
+        if summary["first_commit"] is None or summary["first_commit"] > v["first_commit"]:
             summary["first_commit"] = v["first_commit"]
-        if summary["last_commit"] == None or summary["last_commit"] < v["last_commit"]:
+        if summary["last_commit"] is None or summary["last_commit"] < v["last_commit"]:
             summary["last_commit"] = v["last_commit"]
         summary["total_additions"] += v["additions"]
         summary["total_deletions"] += v["deletions"]
@@ -275,7 +275,7 @@ def main():
         help="Github username to use for API calls (required)",
         required=True)
     parser.add_argument("-p", "--password",
-        help="Github access token to use for API calls (required)",
+        help="Github access token to use for API calls",
         required=False)
     parser.add_argument("-g", "--show_ryg", help="Show Health Summary",
         default=False, action='store_true')
@@ -297,7 +297,7 @@ def main():
     for project in cfg.sections():
         print("===== Processing %s repositories =====" % project)
         contributors = parse_contributor_stats(
-            get_project_contributors(cfg, project, args.username, args.password))
+            get_project_contributors(cfg, project, username, password))
         if 'title' in cfg[project].keys():
             title = cfg[project]['title']
         else:
