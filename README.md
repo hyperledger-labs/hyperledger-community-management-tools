@@ -29,7 +29,7 @@ These tools currently only work for the Hyperledger and Hyperledger Labs GitHub 
 
 ## Generic Tools
 
-These tools should work for any GitHub organization as they either use the GitHub GraphQL API](https://docs.github.com/en/graphql) or are designed to take a configuration file for specifying what you wish to report on.
+These tools should work for any GitHub organization as they either use the [GitHub GraphQL API](https://docs.github.com/en/graphql) or are designed to take a configuration file for specifying what you wish to report on.
 - **Project Reports** - generates a health assessment report for each project within Hyperledger, as well as other projects that might be of interest.
   - [Project Report Requirements](./project-reports/docs/requirements.md) specifies the proposed content
   - [Project Report README](./project-reports/README.md) provides details on how to run
