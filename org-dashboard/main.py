@@ -54,7 +54,7 @@ def query_github_repositories(gh_org, token):
         name_with_owner = i['node']['nameWithOwner'] 
         repos.append({'name': '[' + i['node']['name'] + '](https://github.com/' + name_with_owner + ')',
                       'license': '![GitHub License](https://img.shields.io/github/license/' + name_with_owner + ')',
-                      'last_commit': '![GitHub last commit](https://img.shields.io/github/last-commit/' + name_with_owner + ')',
+                      'last_commit': '![GitHub last commit](https://img.shields.io/github/last-commit/' + name_with_owner + '?display_timestamp=committer)',
                       'commits': '![GitHub total commit activity](https://img.shields.io/github/commit-activity/t/' + name_with_owner + ')',
                       'issues': '![GitHub Issues or Pull Requests](https://img.shields.io/github/issues/' + name_with_owner + ')',
                       'PRs': '![GitHub Issues or Pull Requests](https://img.shields.io/github/issues-pr/' + name_with_owner + ')',
