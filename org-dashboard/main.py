@@ -53,15 +53,15 @@ def query_github_repositories(gh_org, token):
       if not i['node']['isArchived'] and not i['node']['isPrivate']:
         name_with_owner = i['node']['nameWithOwner'] 
         repos.append({'name': '[' + i['node']['name'] + '](https://github.com/' + name_with_owner + ')',
-                      'license': '![GitHub License](https://img.shields.io/github/license/' + name_with_owner + ')',
-                      'last_commit': '![GitHub last commit](https://img.shields.io/github/last-commit/' + name_with_owner + '?display_timestamp=committer)',
-                      'commits': '![GitHub total commit activity](https://img.shields.io/github/commit-activity/t/' + name_with_owner + ')',
-                      'issues': '![GitHub Issues or Pull Requests](https://img.shields.io/github/issues/' + name_with_owner + ')',
-                      'PRs': '![GitHub Issues or Pull Requests](https://img.shields.io/github/issues-pr/' + name_with_owner + ')',
-                      'score': '![OSSF-Scorecard Score](https://img.shields.io/ossf-scorecard/github.com/' + name_with_owner + ')',
-                      'stars': '![GitHub Repo stars](https://img.shields.io/github/stars/' + name_with_owner + ')',
-                      'forks': '![GitHub forks](https://img.shields.io/github/forks/' + name_with_owner + ')',
-                      'watchers': '![GitHub watchers](https://img.shields.io/github/watchers/' + name_with_owner + ')'})
+                      'license': '![GitHub License](https://img.shields.io/github/license/' + name_with_owner + '?label=%20)',
+                      'last_commit': '![GitHub last commit](https://img.shields.io/github/last-commit/' + name_with_owner + '?display_timestamp=committer&label=%20)',
+                      'commits': '![GitHub total commit activity](https://img.shields.io/github/commit-activity/t/' + name_with_owner + '?label=%20)',
+                      'issues': '![GitHub Issues or Pull Requests](https://img.shields.io/github/issues/' + name_with_owner + '?label=%20)',
+                      'PRs': '![GitHub Issues or Pull Requests](https://img.shields.io/github/issues-pr/' + name_with_owner + '?label=%20)',
+                      'score': '![OSSF-Scorecard Score](https://img.shields.io/ossf-scorecard/github.com/' + name_with_owner + '?label=%20)',
+                      'stars': '![GitHub Repo stars](https://img.shields.io/github/stars/' + name_with_owner + '?label=%20)',
+                      'forks': '![GitHub forks](https://img.shields.io/github/forks/' + name_with_owner + '?label=%20)',
+                      'watchers': '![GitHub watchers](https://img.shields.io/github/watchers/' + name_with_owner + '?label=%20)'})
 
     has_next_page = results['data']['organization']['repositories']['pageInfo']['hasNextPage']
     after_clause =', after:"{}"'.format(results['data']['organization']['repositories']['pageInfo']['endCursor'])
@@ -77,7 +77,7 @@ def dashboard(org, token):
   md = Template('''# {{org}} Dashboard
 
 | Repo | License | Last Commit | Commits | Issues | Pull Requests | OpenSSF Scorecard | Stars | Forks | Watchers |
-| ---- | ------- | ----------- | ------- | ------ | ------------- | ----------------- | ----- | ----- | -------- |
+| :--: | :-----: | :---------: | :-----: | :----: | :-----------: | :---------------: | :---: | :---: | :------: |
 {% for r in repos %}| {{r.name}} | {{r.license}} | {{r.last_commit}} | {{r.commits}} | {{r.issues}} | {{r.PRs}} | {{r.score}} | {{r.stars}} | {{r.forks}} | {{r.watchers}} |
 {% endfor %}'''
   )
