@@ -71,7 +71,7 @@ def query_github_repositories(gh_org, token):
 #
 # Get the repository information for an organization and dump it to stdout
 #
-def dashboard(org, token):
+def dashboard(org, output_file, token):
   repos = query_github_repositories(org, token)
 
   md = Template('''# {{org}} Dashboard
@@ -82,12 +82,15 @@ def dashboard(org, token):
 {% endfor %}'''
   )
 
-  path = './output_files'
-  if not os.path.exists(path):
-    os.mkdir(path)
-  now = datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
-  filename = org + '-org-dashboard-' + now + '.md'
-  md.stream(repos=repos, org=org).dump(os.path.join(path, filename))
+  if (output_file is None):
+    path = './output_files'
+    if not os.path.exists(path):
+      os.mkdir(path)
+    now = datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
+    filename = org + '-org-dashboard-' + now + '.md'
+    output_file = os.path.join(path, filename)
+
+  md.stream(repos=repos, org=org).dump(output_file)
 
 
 def main():
@@ -97,6 +100,8 @@ def main():
     required=False)
   parser.add_argument("-o", "--org", help="GitHub organization (required)",
     required=True)
+  parser.add_argument("-f", "--output-file", help="Where to store file",
+    required=False, default=None)
   args = parser.parse_args()
 
   token = args.token
@@ -104,7 +109,7 @@ def main():
   if not token:
     token = getpass.getpass("Please enter github access token:")
 
-  dashboard(args.org, token)
+  dashboard(args.org, args.output_file, token)
 
 
 if __name__ == "__main__":
