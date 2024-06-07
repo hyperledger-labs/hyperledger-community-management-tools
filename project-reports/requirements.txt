@@ -1,8 +1,6 @@
 ConfigParser>=3.7.4
 chardet>=3.0.4
-idna>=2.8
-Jinja2>=2.11.3
-MarkupSafe>=1.1.1
+Jinja2>=3.1.3
 python-dateutil>=2.8.0
 requests>=2.21.0
 six>=1.12.0
