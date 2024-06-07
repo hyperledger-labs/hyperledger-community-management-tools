@@ -1,4 +1,5 @@
 [//]: # (SPDX-License-Identifier: CC-BY-4.0)
+[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/hyperledger-labs/hyperledger-community-management-tools/badge)](https://scorecard.dev/viewer/?uri=github.com//hyperledger-labs/hyperledger-community-management-tools)
 
 # Hyperledger Community Management Tools
 Tools used to manage and evaluate the Hyperledger Community
