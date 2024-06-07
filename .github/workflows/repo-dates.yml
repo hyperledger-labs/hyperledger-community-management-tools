@@ -1,5 +1,8 @@
 name: Repo Dates
 
+# Declare default permissions as read only.
+permissions: read-all
+
 on:
   workflow_dispatch:
     inputs:
